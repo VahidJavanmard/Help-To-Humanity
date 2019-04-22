@@ -44,7 +44,7 @@ namespace SimpleMapDemo
             //AddInitialPolarBarToMap();
 
             // Animate the move on the map so that it is showing the markers we added above.
-            googleMap.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(InMaui, 18));
+            googleMap.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(InMaui, 17);
 
             // Setup a handler for when the user clicks on a marker.
             //googleMap.MarkerClick += MapOnMarkerClick;
