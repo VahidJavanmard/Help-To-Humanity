@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">بازیافت</string>
-    <string name="ok">OK</string>
+    <string name="ok">123</string>
     <string name="mapsAppText">Show Maps App</string>
     <string name="mapsAppTextDescription">Start up the Android Map application.</string>
     <string name="streetViewText">Show Street View</string>
@@ -23,6 +23,6 @@
 
   <string name="openDrawer">بازیافت</string>
   <string name="closeDrawe">بازیافت</string>
-
+  <string name="hintEditText">شماره خود را وارد کنید</string>
 
 </resources>

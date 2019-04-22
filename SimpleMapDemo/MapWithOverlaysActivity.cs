@@ -44,7 +44,7 @@ namespace SimpleMapDemo
             //AddInitialPolarBarToMap();
 
             // Animate the move on the map so that it is showing the markers we added above.
-            googleMap.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(InMaui, 17);
+            googleMap.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(InMaui, 17));
 
             // Setup a handler for when the user clicks on a marker.
             //googleMap.MarkerClick += MapOnMarkerClick;
@@ -76,7 +76,7 @@ namespace SimpleMapDemo
 
             };
             MyListView.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, List);
-            //MyListView.ItemClick += MyListView_ItemClick;
+            MyListView.ItemClick += MyListView_ItemClick;
             MyDrawer = FindViewById<DrawerLayout>(Resource.Id.MyDrawer);
             MyListView.Tag = 0;
             manageDrawer = new ManageDrawer(this, MyDrawer, Resource.String.openDrawer, Resource.String.closeDrawe);
@@ -93,7 +93,16 @@ namespace SimpleMapDemo
 
         }
 
+        private void MyListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Toast.MakeText(this, List[e.Position], ToastLength.Short).Show();
 
+            if(e.Position==4)
+            {
+                SetContentView(Resource.Layout.Support);
+
+            }
+        }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {

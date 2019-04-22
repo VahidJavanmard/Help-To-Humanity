@@ -2639,6 +2639,9 @@ namespace SimpleMapDemo
 			// aapt resource value: 0x7f0a0048
 			public const int bottom = 2131361864;
 			
+			// aapt resource value: 0x7f0a00bb
+			public const int button1 = 2131361979;
+			
 			// aapt resource value: 0x7f0a006d
 			public const int buttonPanel = 2131361901;
 			
@@ -2810,14 +2813,14 @@ namespace SimpleMapDemo
 			// aapt resource value: 0x7f0a00a7
 			public const int map = 2131361959;
 			
-			// aapt resource value: 0x7f0a00bd
-			public const int masked = 2131361981;
+			// aapt resource value: 0x7f0a00be
+			public const int masked = 2131361982;
 			
 			// aapt resource value: 0x7f0a00ae
 			public const int media_actions = 2131361966;
 			
-			// aapt resource value: 0x7f0a00bb
-			public const int message = 2131361979;
+			// aapt resource value: 0x7f0a00bc
+			public const int message = 2131361980;
 			
 			// aapt resource value: 0x7f0a003c
 			public const int middle = 2131361852;
@@ -3077,8 +3080,8 @@ namespace SimpleMapDemo
 			// aapt resource value: 0x7f0a0016
 			public const int view_offset_helper = 2131361814;
 			
-			// aapt resource value: 0x7f0a00bc
-			public const int visible = 2131361980;
+			// aapt resource value: 0x7f0a00bd
+			public const int visible = 2131361981;
 			
 			// aapt resource value: 0x7f0a0026
 			public const int wide = 2131361830;
@@ -3329,10 +3332,13 @@ namespace SimpleMapDemo
 			public const int select_dialog_singlechoice_material = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int support_simple_spinner_dropdown_item = 2130903100;
+			public const int Support = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int tooltip = 2130903101;
+			public const int support_simple_spinner_dropdown_item = 2130903101;
+			
+			// aapt resource value: 0x7f03003e
+			public const int tooltip = 2130903102;
 			
 			static Layout()
 			{
@@ -3523,6 +3529,9 @@ namespace SimpleMapDemo
 			
 			// aapt resource value: 0x7f070010
 			public const int common_signin_button_text_long = 2131165200;
+			
+			// aapt resource value: 0x7f070049
+			public const int hintEditText = 2131165257;
 			
 			// aapt resource value: 0x7f07003e
 			public const int location_permission_missing = 2131165246;

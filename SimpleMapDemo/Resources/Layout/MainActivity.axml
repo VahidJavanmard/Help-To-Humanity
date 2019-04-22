@@ -18,7 +18,7 @@
 		android:ellipsize="middle"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:hint="شماره خود را وارد کنید"
+        android:hint="@string/hintEditText"
 		android:background="#ffe3e3e3"
         android:id="@+id/InputNumber" />
     
