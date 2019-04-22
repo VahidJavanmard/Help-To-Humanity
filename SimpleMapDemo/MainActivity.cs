@@ -69,15 +69,22 @@ namespace SimpleMapDemo
         private void TxtNumber_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
         {
             EditText txtNumber = FindViewById<EditText>(Resource.Id.InputNumber);
+            Button SendSms = FindViewById<Button>(Resource.Id.submit);
             if (txtNumber.Text.Length >= 10)
             {
-
                 if (txtNumber.Text.StartsWith("98")|| txtNumber.Text.StartsWith("09")|| txtNumber.Text.StartsWith("9"))
                 {
-                    Button SendSms = FindViewById<Button>(Resource.Id.submit);
                     SendSms.Enabled = true;
                     PhoneNumber = txtNumber.Text; 
                 }
+                else
+                {
+                    SendSms.Enabled = false;
+                }
+            }
+            else
+            {
+                    SendSms.Enabled = false;
             }
         }
 
@@ -131,6 +138,10 @@ namespace SimpleMapDemo
                 {
                     Toast.MakeText(this, "کد فعالسازی صحیح نمی باشد", ToastLength.Short).Show();
                 }
+            }
+            else
+            {
+                btnLocationtActivity.Enabled = false;
             }
         }
         private void ChangeActivity(object sender, EventArgs e)
