@@ -24,5 +24,7 @@
   <string name="openDrawer">بازیافت</string>
   <string name="closeDrawe">بازیافت</string>
   <string name="hintEditText">شماره خود را وارد کنید</string>
+  <string name="getConfirmationCode">دریافت کد تایید</string>
+  <string name="appName">HtH</string>
 
 </resources>
