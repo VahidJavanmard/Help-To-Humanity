@@ -8,7 +8,7 @@
 	>
 	<ImageView
 		android:layout_width="match_parent"
-		android:layout_height="220dp"
+		android:layout_height="230dp"
 		android:src="@drawable/generatedtext"
 		android:id="@+id/imageView1"
     />
