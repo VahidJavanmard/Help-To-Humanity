@@ -1,6 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="colorPrimary">#3F51B5</color>
+  <color name="colorPrimary">#BD8BEA</color>
   <color name="colorPrimaryDark">#303F9F</color>
   <color name="colorAccent">#FF4081</color>
+  <color name="EditTextLoginPage">#ffe3e3e3</color>
+  <color name="TextViewLoginPage">#000</color>
+  
+  <!--<color name="BackgroundButtonViewLoginPage">#ff4d7feb</color>-->
+  <!--<color name="TextColorButtonViewLoginPage">#ffffffff</color>-->
+  
+  <!--<color name="navigationBarColor">#BD8BEA</color>-->
+
+  
+
 </resources>
