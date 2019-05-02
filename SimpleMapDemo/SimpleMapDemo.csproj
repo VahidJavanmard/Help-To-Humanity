@@ -34,8 +34,11 @@
     <WarningLevel>4</WarningLevel>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
     <JavaMaximumHeapSize>512M</JavaMaximumHeapSize>
-    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
+    <AndroidCreatePackagePerAbi>true</AndroidCreatePackagePerAbi>
+    <AndroidSupportedAbis>armeabi;armeabi-v7a;x86;x86_64;arm64-v8a</AndroidSupportedAbis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>false</Optimize>
@@ -74,23 +77,11 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\Layout\MapWithOverlayLayout.axml" />
-    <None Include="Web References\com.kavenegar.api\ApiCities.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\com.kavenegar.api\ApiProvincies.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\com.kavenegar.api\ApiReceive.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\com.kavenegar.api\ApiSelect.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
     <None Include="Web References\com.kavenegar.api\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\com.kavenegar.api\v1.wsdl" />
+    <None Include="Web References\com.kavenegar.api\SendSMS.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml">
@@ -152,10 +143,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://api.kavenegar.com/soap/v1.asmx%3fop=SendSimpleByApikey">
+    <WebReferenceUrl Include="http://login.Parsgreen.com/Api/SendSMS.asmx%3fwsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\com.kavenegar.api\</RelPath>
-      <UpdateFromURL>http://api.kavenegar.com/soap/v1.asmx%3fop=SendSimpleByApikey</UpdateFromURL>
+      <UpdateFromURL>http://login.Parsgreen.com/Api/SendSMS.asmx%3fwsdl</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -165,9 +156,6 @@
       <CachedSettingsPropName>
       </CachedSettingsPropName>
     </WebReferenceUrl>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web References\com.kavenegar.api\v1.disco" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\recycleIcon.png" />

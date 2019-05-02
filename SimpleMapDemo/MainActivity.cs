@@ -22,6 +22,8 @@ namespace SimpleMapDemo
         public static readonly string TAG = "XamarinMapDemo";
         private string PhoneNumber = "";
         private int randomCode = 0;
+
+        private string lastNumber = "";
         // This is a list of the examples that will be display in the Main Activity.
         //static readonly List<SampleActivityMetaData> SampleMetaDataList = new List<SampleActivityMetaData>
         //                                                                  {
@@ -110,16 +112,36 @@ namespace SimpleMapDemo
         }
         private bool SendSms(string phoneNumber, int Code)
         {
-            const String ApiKey = "2F68466374502F767071335833323731506E4948446145695145755735667342";
-            string messege = "به سامانه جمع آوری بازیافت خوش آمدید" +
-                             "کد فعالسازی شما :" + Code + " می باشد.";
-            int status_code = 0;
-            String status_message = "";
-            string[] num = new[] { phoneNumber };
-            //String[] receptors = message.Receptor.Split(',');
-            com.kavenegar.api.v1 client = new com.kavenegar.api.v1();
-            var result = client.SendSimpleByApikey(ApiKey, "", messege, num, 0, 0, ref status_code, ref status_message);
+            if (lastNumber!=phoneNumber)
+            {
+                try
+                {
+                    lastNumber = phoneNumber;
+                    const string ApiKey = "F4FDE848-1FC4-4987-A44C-BA0A38E2E35E";
+                    string messege = "به سامانه جمع آوری بازیافت خوش آمدید" +
+                                     "کد فعالسازی شما :" + PersianNumber(Code.ToString()) + " می باشد.";
+                    var sms = new com.kavenegar.api.SendSMS();
+                    string returnSms = "";
+                    var result = sms.Send(ApiKey, phoneNumber, messege, ref returnSms);
+                    if (result != 1)
+                    {
+                        SendSms(phoneNumber, Code);
+                    }
+                }
+                catch
+                {
+
+                } 
+            }
             return true;
+        }
+
+        public string PersianNumber(string number)
+        {
+            string persianNumber=number.Replace("0", "۰").Replace("1", "١").Replace("2", "۲").Replace("3", "۳")
+                .Replace("4", "۴").Replace("5", "۵").Replace("6", "۶").Replace("7", "۷")
+                .Replace("8","۸").Replace("9", "۹");
+            return persianNumber;
         }
 
         private void CheckVerifyCode(object sender, Android.Text.TextChangedEventArgs e)

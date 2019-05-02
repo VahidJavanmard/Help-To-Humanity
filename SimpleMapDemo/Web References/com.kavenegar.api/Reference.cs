@@ -26,64 +26,32 @@ namespace SimpleMapDemo.com.kavenegar.api {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Web.Services.WebServiceBindingAttribute(Name="v1Soap", Namespace="http://api.kavenegar.com/")]
-    public partial class v1 : System.Web.Services.Protocols.SoapHttpClientProtocol {
+    [System.Web.Services.WebServiceBindingAttribute(Name="SendSMSSoap", Namespace="http://ParsGreen.com/")]
+    public partial class SendSMS : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
-        private System.Threading.SendOrPostCallback SendAdvanceOperationCompleted;
+        private System.Threading.SendOrPostCallback SendOtpOperationCompleted;
         
-        private System.Threading.SendOrPostCallback ProvinceInfoOperationCompleted;
+        private System.Threading.SendOrPostCallback MessageInfoOperationCompleted;
         
-        private System.Threading.SendOrPostCallback CityInfoOperationCompleted;
+        private System.Threading.SendOrPostCallback SendGroupSMSOperationCompleted;
         
-        private System.Threading.SendOrPostCallback SendRandomBulkByApiKeyOperationCompleted;
+        private System.Threading.SendOrPostCallback SendOperationCompleted;
         
-        private System.Threading.SendOrPostCallback SendSequentialBulkByApiKeyOperationCompleted;
+        private System.Threading.SendOrPostCallback SendGroupSMSP2POperationCompleted;
         
-        private System.Threading.SendOrPostCallback SendSimpleByApikeyOperationCompleted;
+        private System.Threading.SendOrPostCallback SendToGroupOperationCompleted;
         
-        private System.Threading.SendOrPostCallback SendSimpleByLoginInfoOperationCompleted;
+        private System.Threading.SendOrPostCallback SendGroupSmsSimpleOperationCompleted;
         
-        private System.Threading.SendOrPostCallback SendArrayByLoginInfoOperationCompleted;
+        private System.Threading.SendOrPostCallback GetDeliveryOperationCompleted;
         
-        private System.Threading.SendOrPostCallback SendArrayByApikeyOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback SendPostalCodeByApikeyOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback CountPostalCodeOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetStatusByApikeyOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetStatusByLoginInfoOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback SelectByApikeyOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback SelectByLoginInfoOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback SelectoutboxByApikeyOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback SelectoutboxByLoginInfoOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback SelectlatestByApikeyOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback SelectlatestByLoginInfoOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback CancelByApikeyOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback CancelByLoginInfoOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback ReceiveByApikeyOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback ReceiveByLoginInfoOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback RemainCreditByApiKeyOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback RemainCreditByLoginInfoOperationCompleted;
+        private System.Threading.SendOrPostCallback GetSMSNumbersOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
-        public v1() {
-            this.Url = "http://api.kavenegar.com/soap/v1.asmx";
+        public SendSMS() {
+            this.Url = "http://login.parsgreen.com/Api/SendSMS.asmx";
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
@@ -118,1100 +86,382 @@ namespace SimpleMapDemo.com.kavenegar.api {
         }
         
         /// <remarks/>
-        public event SendAdvanceCompletedEventHandler SendAdvanceCompleted;
+        public event SendOtpCompletedEventHandler SendOtpCompleted;
         
         /// <remarks/>
-        public event ProvinceInfoCompletedEventHandler ProvinceInfoCompleted;
+        public event MessageInfoCompletedEventHandler MessageInfoCompleted;
         
         /// <remarks/>
-        public event CityInfoCompletedEventHandler CityInfoCompleted;
+        public event SendGroupSMSCompletedEventHandler SendGroupSMSCompleted;
         
         /// <remarks/>
-        public event SendRandomBulkByApiKeyCompletedEventHandler SendRandomBulkByApiKeyCompleted;
+        public event SendCompletedEventHandler SendCompleted;
         
         /// <remarks/>
-        public event SendSequentialBulkByApiKeyCompletedEventHandler SendSequentialBulkByApiKeyCompleted;
+        public event SendGroupSMSP2PCompletedEventHandler SendGroupSMSP2PCompleted;
         
         /// <remarks/>
-        public event SendSimpleByApikeyCompletedEventHandler SendSimpleByApikeyCompleted;
+        public event SendToGroupCompletedEventHandler SendToGroupCompleted;
         
         /// <remarks/>
-        public event SendSimpleByLoginInfoCompletedEventHandler SendSimpleByLoginInfoCompleted;
+        public event SendGroupSmsSimpleCompletedEventHandler SendGroupSmsSimpleCompleted;
         
         /// <remarks/>
-        public event SendArrayByLoginInfoCompletedEventHandler SendArrayByLoginInfoCompleted;
+        public event GetDeliveryCompletedEventHandler GetDeliveryCompleted;
         
         /// <remarks/>
-        public event SendArrayByApikeyCompletedEventHandler SendArrayByApikeyCompleted;
+        public event GetSMSNumbersCompletedEventHandler GetSMSNumbersCompleted;
         
         /// <remarks/>
-        public event SendPostalCodeByApikeyCompletedEventHandler SendPostalCodeByApikeyCompleted;
-        
-        /// <remarks/>
-        public event CountPostalCodeCompletedEventHandler CountPostalCodeCompleted;
-        
-        /// <remarks/>
-        public event GetStatusByApikeyCompletedEventHandler GetStatusByApikeyCompleted;
-        
-        /// <remarks/>
-        public event GetStatusByLoginInfoCompletedEventHandler GetStatusByLoginInfoCompleted;
-        
-        /// <remarks/>
-        public event SelectByApikeyCompletedEventHandler SelectByApikeyCompleted;
-        
-        /// <remarks/>
-        public event SelectByLoginInfoCompletedEventHandler SelectByLoginInfoCompleted;
-        
-        /// <remarks/>
-        public event SelectoutboxByApikeyCompletedEventHandler SelectoutboxByApikeyCompleted;
-        
-        /// <remarks/>
-        public event SelectoutboxByLoginInfoCompletedEventHandler SelectoutboxByLoginInfoCompleted;
-        
-        /// <remarks/>
-        public event SelectlatestByApikeyCompletedEventHandler SelectlatestByApikeyCompleted;
-        
-        /// <remarks/>
-        public event SelectlatestByLoginInfoCompletedEventHandler SelectlatestByLoginInfoCompleted;
-        
-        /// <remarks/>
-        public event CancelByApikeyCompletedEventHandler CancelByApikeyCompleted;
-        
-        /// <remarks/>
-        public event CancelByLoginInfoCompletedEventHandler CancelByLoginInfoCompleted;
-        
-        /// <remarks/>
-        public event ReceiveByApikeyCompletedEventHandler ReceiveByApikeyCompleted;
-        
-        /// <remarks/>
-        public event ReceiveByLoginInfoCompletedEventHandler ReceiveByLoginInfoCompleted;
-        
-        /// <remarks/>
-        public event RemainCreditByApiKeyCompletedEventHandler RemainCreditByApiKeyCompleted;
-        
-        /// <remarks/>
-        public event RemainCreditByLoginInfoCompletedEventHandler RemainCreditByLoginInfoCompleted;
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/SendAdvance", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public long SendAdvance(string apikey, string sender, string message, int encoding, string receptor, long unixdate, int messagemode, string fallbackurl, string clientmessageid, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("SendAdvance", new object[] {
-                        apikey,
-                        sender,
-                        message,
-                        encoding,
-                        receptor,
-                        unixdate,
-                        messagemode,
-                        fallbackurl,
-                        clientmessageid,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((long)(results[0]));
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://ParsGreen.com/SendOtp", RequestNamespace="http://ParsGreen.com/", ResponseNamespace="http://ParsGreen.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int SendOtp(string signature, string mobile, string Lang, int otpType, int patternId, out string otpCode) {
+            object[] results = this.Invoke("SendOtp", new object[] {
+                        signature,
+                        mobile,
+                        Lang,
+                        otpType,
+                        patternId});
+            otpCode = ((string)(results[1]));
+            return ((int)(results[0]));
         }
         
         /// <remarks/>
-        public void SendAdvanceAsync(string apikey, string sender, string message, int encoding, string receptor, long unixdate, int messagemode, string fallbackurl, string clientmessageid, int status, string statusmessage) {
-            this.SendAdvanceAsync(apikey, sender, message, encoding, receptor, unixdate, messagemode, fallbackurl, clientmessageid, status, statusmessage, null);
+        public void SendOtpAsync(string signature, string mobile, string Lang, int otpType, int patternId) {
+            this.SendOtpAsync(signature, mobile, Lang, otpType, patternId, null);
         }
         
         /// <remarks/>
-        public void SendAdvanceAsync(string apikey, string sender, string message, int encoding, string receptor, long unixdate, int messagemode, string fallbackurl, string clientmessageid, int status, string statusmessage, object userState) {
-            if ((this.SendAdvanceOperationCompleted == null)) {
-                this.SendAdvanceOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSendAdvanceOperationCompleted);
+        public void SendOtpAsync(string signature, string mobile, string Lang, int otpType, int patternId, object userState) {
+            if ((this.SendOtpOperationCompleted == null)) {
+                this.SendOtpOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSendOtpOperationCompleted);
             }
-            this.InvokeAsync("SendAdvance", new object[] {
-                        apikey,
-                        sender,
-                        message,
-                        encoding,
-                        receptor,
-                        unixdate,
-                        messagemode,
-                        fallbackurl,
-                        clientmessageid,
-                        status,
-                        statusmessage}, this.SendAdvanceOperationCompleted, userState);
+            this.InvokeAsync("SendOtp", new object[] {
+                        signature,
+                        mobile,
+                        Lang,
+                        otpType,
+                        patternId}, this.SendOtpOperationCompleted, userState);
         }
         
-        private void OnSendAdvanceOperationCompleted(object arg) {
-            if ((this.SendAdvanceCompleted != null)) {
+        private void OnSendOtpOperationCompleted(object arg) {
+            if ((this.SendOtpCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SendAdvanceCompleted(this, new SendAdvanceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.SendOtpCompleted(this, new SendOtpCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/ProvinceInfo", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ApiProvincies[] ProvinceInfo(ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("ProvinceInfo", new object[] {
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((ApiProvincies[])(results[0]));
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://ParsGreen.com/MessageInfo", RequestNamespace="http://ParsGreen.com/", ResponseNamespace="http://ParsGreen.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public double MessageInfo(string signature, string MsgBody, ref int part, ref bool isUnicode) {
+            object[] results = this.Invoke("MessageInfo", new object[] {
+                        signature,
+                        MsgBody,
+                        part,
+                        isUnicode});
+            part = ((int)(results[1]));
+            isUnicode = ((bool)(results[2]));
+            return ((double)(results[0]));
         }
         
         /// <remarks/>
-        public void ProvinceInfoAsync(int status, string statusmessage) {
-            this.ProvinceInfoAsync(status, statusmessage, null);
+        public void MessageInfoAsync(string signature, string MsgBody, int part, bool isUnicode) {
+            this.MessageInfoAsync(signature, MsgBody, part, isUnicode, null);
         }
         
         /// <remarks/>
-        public void ProvinceInfoAsync(int status, string statusmessage, object userState) {
-            if ((this.ProvinceInfoOperationCompleted == null)) {
-                this.ProvinceInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnProvinceInfoOperationCompleted);
+        public void MessageInfoAsync(string signature, string MsgBody, int part, bool isUnicode, object userState) {
+            if ((this.MessageInfoOperationCompleted == null)) {
+                this.MessageInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnMessageInfoOperationCompleted);
             }
-            this.InvokeAsync("ProvinceInfo", new object[] {
-                        status,
-                        statusmessage}, this.ProvinceInfoOperationCompleted, userState);
+            this.InvokeAsync("MessageInfo", new object[] {
+                        signature,
+                        MsgBody,
+                        part,
+                        isUnicode}, this.MessageInfoOperationCompleted, userState);
         }
         
-        private void OnProvinceInfoOperationCompleted(object arg) {
-            if ((this.ProvinceInfoCompleted != null)) {
+        private void OnMessageInfoOperationCompleted(object arg) {
+            if ((this.MessageInfoCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.ProvinceInfoCompleted(this, new ProvinceInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.MessageInfoCompleted(this, new MessageInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/CityInfo", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ApiCities[] CityInfo(int provinceid, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("CityInfo", new object[] {
-                        provinceid,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((ApiCities[])(results[0]));
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://ParsGreen.com/SendGroupSMS", RequestNamespace="http://ParsGreen.com/", ResponseNamespace="http://ParsGreen.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int SendGroupSMS(string signature, string from, string[] to, string text, bool isFlash, string udh, ref int success, ref string[] retStr) {
+            object[] results = this.Invoke("SendGroupSMS", new object[] {
+                        signature,
+                        from,
+                        to,
+                        text,
+                        isFlash,
+                        udh,
+                        success,
+                        retStr});
+            success = ((int)(results[1]));
+            retStr = ((string[])(results[2]));
+            return ((int)(results[0]));
         }
         
         /// <remarks/>
-        public void CityInfoAsync(int provinceid, int status, string statusmessage) {
-            this.CityInfoAsync(provinceid, status, statusmessage, null);
+        public void SendGroupSMSAsync(string signature, string from, string[] to, string text, bool isFlash, string udh, int success, string[] retStr) {
+            this.SendGroupSMSAsync(signature, from, to, text, isFlash, udh, success, retStr, null);
         }
         
         /// <remarks/>
-        public void CityInfoAsync(int provinceid, int status, string statusmessage, object userState) {
-            if ((this.CityInfoOperationCompleted == null)) {
-                this.CityInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCityInfoOperationCompleted);
+        public void SendGroupSMSAsync(string signature, string from, string[] to, string text, bool isFlash, string udh, int success, string[] retStr, object userState) {
+            if ((this.SendGroupSMSOperationCompleted == null)) {
+                this.SendGroupSMSOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSendGroupSMSOperationCompleted);
             }
-            this.InvokeAsync("CityInfo", new object[] {
-                        provinceid,
-                        status,
-                        statusmessage}, this.CityInfoOperationCompleted, userState);
+            this.InvokeAsync("SendGroupSMS", new object[] {
+                        signature,
+                        from,
+                        to,
+                        text,
+                        isFlash,
+                        udh,
+                        success,
+                        retStr}, this.SendGroupSMSOperationCompleted, userState);
         }
         
-        private void OnCityInfoOperationCompleted(object arg) {
-            if ((this.CityInfoCompleted != null)) {
+        private void OnSendGroupSMSOperationCompleted(object arg) {
+            if ((this.SendGroupSMSCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.CityInfoCompleted(this, new CityInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.SendGroupSMSCompleted(this, new SendGroupSMSCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/SendRandomBulkByApiKey", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public long[] SendRandomBulkByApiKey(string apikey, string sender, string message, int provinceid, int cityid, BulkRecipientType recipientKind, long randomcount, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("SendRandomBulkByApiKey", new object[] {
-                        apikey,
-                        sender,
-                        message,
-                        provinceid,
-                        cityid,
-                        recipientKind,
-                        randomcount,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((long[])(results[0]));
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://ParsGreen.com/Send", RequestNamespace="http://ParsGreen.com/", ResponseNamespace="http://ParsGreen.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int Send(string signature, string toMobile, string smsBody, ref string retStr) {
+            object[] results = this.Invoke("Send", new object[] {
+                        signature,
+                        toMobile,
+                        smsBody,
+                        retStr});
+            retStr = ((string)(results[1]));
+            return ((int)(results[0]));
         }
         
         /// <remarks/>
-        public void SendRandomBulkByApiKeyAsync(string apikey, string sender, string message, int provinceid, int cityid, BulkRecipientType recipientKind, long randomcount, int status, string statusmessage) {
-            this.SendRandomBulkByApiKeyAsync(apikey, sender, message, provinceid, cityid, recipientKind, randomcount, status, statusmessage, null);
+        public void SendAsync(string signature, string toMobile, string smsBody, string retStr) {
+            this.SendAsync(signature, toMobile, smsBody, retStr, null);
         }
         
         /// <remarks/>
-        public void SendRandomBulkByApiKeyAsync(string apikey, string sender, string message, int provinceid, int cityid, BulkRecipientType recipientKind, long randomcount, int status, string statusmessage, object userState) {
-            if ((this.SendRandomBulkByApiKeyOperationCompleted == null)) {
-                this.SendRandomBulkByApiKeyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSendRandomBulkByApiKeyOperationCompleted);
+        public void SendAsync(string signature, string toMobile, string smsBody, string retStr, object userState) {
+            if ((this.SendOperationCompleted == null)) {
+                this.SendOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSendOperationCompleted);
             }
-            this.InvokeAsync("SendRandomBulkByApiKey", new object[] {
-                        apikey,
-                        sender,
-                        message,
-                        provinceid,
-                        cityid,
-                        recipientKind,
-                        randomcount,
-                        status,
-                        statusmessage}, this.SendRandomBulkByApiKeyOperationCompleted, userState);
+            this.InvokeAsync("Send", new object[] {
+                        signature,
+                        toMobile,
+                        smsBody,
+                        retStr}, this.SendOperationCompleted, userState);
         }
         
-        private void OnSendRandomBulkByApiKeyOperationCompleted(object arg) {
-            if ((this.SendRandomBulkByApiKeyCompleted != null)) {
+        private void OnSendOperationCompleted(object arg) {
+            if ((this.SendCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SendRandomBulkByApiKeyCompleted(this, new SendRandomBulkByApiKeyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.SendCompleted(this, new SendCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/SendSequentialBulkByApiKey", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public long[] SendSequentialBulkByApiKey(string apikey, string sender, string message, int provinceid, int cityid, BulkRecipientType recipientKind, long startindex, long length, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("SendSequentialBulkByApiKey", new object[] {
-                        apikey,
-                        sender,
-                        message,
-                        provinceid,
-                        cityid,
-                        recipientKind,
-                        startindex,
-                        length,
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://ParsGreen.com/SendGroupSMSP2P", RequestNamespace="http://ParsGreen.com/", ResponseNamespace="http://ParsGreen.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int SendGroupSMSP2P(string signature, string from, string[] to, string[] texts, bool isFlash, string udh, ref int[] status, ref int[] success, ref string[] retStr) {
+            object[] results = this.Invoke("SendGroupSMSP2P", new object[] {
+                        signature,
+                        from,
+                        to,
+                        texts,
+                        isFlash,
+                        udh,
                         status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((long[])(results[0]));
+                        success,
+                        retStr});
+            status = ((int[])(results[1]));
+            success = ((int[])(results[2]));
+            retStr = ((string[])(results[3]));
+            return ((int)(results[0]));
         }
         
         /// <remarks/>
-        public void SendSequentialBulkByApiKeyAsync(string apikey, string sender, string message, int provinceid, int cityid, BulkRecipientType recipientKind, long startindex, long length, int status, string statusmessage) {
-            this.SendSequentialBulkByApiKeyAsync(apikey, sender, message, provinceid, cityid, recipientKind, startindex, length, status, statusmessage, null);
+        public void SendGroupSMSP2PAsync(string signature, string from, string[] to, string[] texts, bool isFlash, string udh, int[] status, int[] success, string[] retStr) {
+            this.SendGroupSMSP2PAsync(signature, from, to, texts, isFlash, udh, status, success, retStr, null);
         }
         
         /// <remarks/>
-        public void SendSequentialBulkByApiKeyAsync(string apikey, string sender, string message, int provinceid, int cityid, BulkRecipientType recipientKind, long startindex, long length, int status, string statusmessage, object userState) {
-            if ((this.SendSequentialBulkByApiKeyOperationCompleted == null)) {
-                this.SendSequentialBulkByApiKeyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSendSequentialBulkByApiKeyOperationCompleted);
+        public void SendGroupSMSP2PAsync(string signature, string from, string[] to, string[] texts, bool isFlash, string udh, int[] status, int[] success, string[] retStr, object userState) {
+            if ((this.SendGroupSMSP2POperationCompleted == null)) {
+                this.SendGroupSMSP2POperationCompleted = new System.Threading.SendOrPostCallback(this.OnSendGroupSMSP2POperationCompleted);
             }
-            this.InvokeAsync("SendSequentialBulkByApiKey", new object[] {
-                        apikey,
-                        sender,
-                        message,
-                        provinceid,
-                        cityid,
-                        recipientKind,
-                        startindex,
-                        length,
+            this.InvokeAsync("SendGroupSMSP2P", new object[] {
+                        signature,
+                        from,
+                        to,
+                        texts,
+                        isFlash,
+                        udh,
                         status,
-                        statusmessage}, this.SendSequentialBulkByApiKeyOperationCompleted, userState);
+                        success,
+                        retStr}, this.SendGroupSMSP2POperationCompleted, userState);
         }
         
-        private void OnSendSequentialBulkByApiKeyOperationCompleted(object arg) {
-            if ((this.SendSequentialBulkByApiKeyCompleted != null)) {
+        private void OnSendGroupSMSP2POperationCompleted(object arg) {
+            if ((this.SendGroupSMSP2PCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SendSequentialBulkByApiKeyCompleted(this, new SendSequentialBulkByApiKeyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.SendGroupSMSP2PCompleted(this, new SendGroupSMSP2PCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/SendSimpleByApikey", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public long[] SendSimpleByApikey(string apikey, string sender, string message, string[] receptor, long unixdate, int msgmode, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("SendSimpleByApikey", new object[] {
-                        apikey,
-                        sender,
-                        message,
-                        receptor,
-                        unixdate,
-                        msgmode,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((long[])(results[0]));
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://ParsGreen.com/SendToGroup", RequestNamespace="http://ParsGreen.com/", ResponseNamespace="http://ParsGreen.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int SendToGroup(string signature, string from, string groupIdEncrypt, string text, bool isFlash, string udh, ref int success, ref string[] retStr) {
+            object[] results = this.Invoke("SendToGroup", new object[] {
+                        signature,
+                        from,
+                        groupIdEncrypt,
+                        text,
+                        isFlash,
+                        udh,
+                        success,
+                        retStr});
+            success = ((int)(results[1]));
+            retStr = ((string[])(results[2]));
+            return ((int)(results[0]));
         }
         
         /// <remarks/>
-        public void SendSimpleByApikeyAsync(string apikey, string sender, string message, string[] receptor, long unixdate, int msgmode, int status, string statusmessage) {
-            this.SendSimpleByApikeyAsync(apikey, sender, message, receptor, unixdate, msgmode, status, statusmessage, null);
+        public void SendToGroupAsync(string signature, string from, string groupIdEncrypt, string text, bool isFlash, string udh, int success, string[] retStr) {
+            this.SendToGroupAsync(signature, from, groupIdEncrypt, text, isFlash, udh, success, retStr, null);
         }
         
         /// <remarks/>
-        public void SendSimpleByApikeyAsync(string apikey, string sender, string message, string[] receptor, long unixdate, int msgmode, int status, string statusmessage, object userState) {
-            if ((this.SendSimpleByApikeyOperationCompleted == null)) {
-                this.SendSimpleByApikeyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSendSimpleByApikeyOperationCompleted);
+        public void SendToGroupAsync(string signature, string from, string groupIdEncrypt, string text, bool isFlash, string udh, int success, string[] retStr, object userState) {
+            if ((this.SendToGroupOperationCompleted == null)) {
+                this.SendToGroupOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSendToGroupOperationCompleted);
             }
-            this.InvokeAsync("SendSimpleByApikey", new object[] {
-                        apikey,
-                        sender,
-                        message,
-                        receptor,
-                        unixdate,
-                        msgmode,
-                        status,
-                        statusmessage}, this.SendSimpleByApikeyOperationCompleted, userState);
+            this.InvokeAsync("SendToGroup", new object[] {
+                        signature,
+                        from,
+                        groupIdEncrypt,
+                        text,
+                        isFlash,
+                        udh,
+                        success,
+                        retStr}, this.SendToGroupOperationCompleted, userState);
         }
         
-        private void OnSendSimpleByApikeyOperationCompleted(object arg) {
-            if ((this.SendSimpleByApikeyCompleted != null)) {
+        private void OnSendToGroupOperationCompleted(object arg) {
+            if ((this.SendToGroupCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SendSimpleByApikeyCompleted(this, new SendSimpleByApikeyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.SendToGroupCompleted(this, new SendToGroupCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/SendSimpleByLoginInfo", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public long[] SendSimpleByLoginInfo(string userName, string password, string sender, string message, string[] receptor, long unixdate, int msgmode, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("SendSimpleByLoginInfo", new object[] {
-                        userName,
-                        password,
-                        sender,
-                        message,
-                        receptor,
-                        unixdate,
-                        msgmode,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((long[])(results[0]));
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://ParsGreen.com/SendGroupSmsSimple", RequestNamespace="http://ParsGreen.com/", ResponseNamespace="http://ParsGreen.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int SendGroupSmsSimple(string signature, string from, string[] to, string text, bool isFlash, string udh) {
+            object[] results = this.Invoke("SendGroupSmsSimple", new object[] {
+                        signature,
+                        from,
+                        to,
+                        text,
+                        isFlash,
+                        udh});
+            return ((int)(results[0]));
         }
         
         /// <remarks/>
-        public void SendSimpleByLoginInfoAsync(string userName, string password, string sender, string message, string[] receptor, long unixdate, int msgmode, int status, string statusmessage) {
-            this.SendSimpleByLoginInfoAsync(userName, password, sender, message, receptor, unixdate, msgmode, status, statusmessage, null);
+        public void SendGroupSmsSimpleAsync(string signature, string from, string[] to, string text, bool isFlash, string udh) {
+            this.SendGroupSmsSimpleAsync(signature, from, to, text, isFlash, udh, null);
         }
         
         /// <remarks/>
-        public void SendSimpleByLoginInfoAsync(string userName, string password, string sender, string message, string[] receptor, long unixdate, int msgmode, int status, string statusmessage, object userState) {
-            if ((this.SendSimpleByLoginInfoOperationCompleted == null)) {
-                this.SendSimpleByLoginInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSendSimpleByLoginInfoOperationCompleted);
+        public void SendGroupSmsSimpleAsync(string signature, string from, string[] to, string text, bool isFlash, string udh, object userState) {
+            if ((this.SendGroupSmsSimpleOperationCompleted == null)) {
+                this.SendGroupSmsSimpleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSendGroupSmsSimpleOperationCompleted);
             }
-            this.InvokeAsync("SendSimpleByLoginInfo", new object[] {
-                        userName,
-                        password,
-                        sender,
-                        message,
-                        receptor,
-                        unixdate,
-                        msgmode,
-                        status,
-                        statusmessage}, this.SendSimpleByLoginInfoOperationCompleted, userState);
+            this.InvokeAsync("SendGroupSmsSimple", new object[] {
+                        signature,
+                        from,
+                        to,
+                        text,
+                        isFlash,
+                        udh}, this.SendGroupSmsSimpleOperationCompleted, userState);
         }
         
-        private void OnSendSimpleByLoginInfoOperationCompleted(object arg) {
-            if ((this.SendSimpleByLoginInfoCompleted != null)) {
+        private void OnSendGroupSmsSimpleOperationCompleted(object arg) {
+            if ((this.SendGroupSmsSimpleCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SendSimpleByLoginInfoCompleted(this, new SendSimpleByLoginInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.SendGroupSmsSimpleCompleted(this, new SendGroupSmsSimpleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/SendArrayByLoginInfo", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public long[] SendArrayByLoginInfo(string userName, string password, string[] sender, string[] message, string[] receptor, long unixdate, int[] msgmode, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("SendArrayByLoginInfo", new object[] {
-                        userName,
-                        password,
-                        sender,
-                        message,
-                        receptor,
-                        unixdate,
-                        msgmode,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((long[])(results[0]));
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://ParsGreen.com/GetDelivery", RequestNamespace="http://ParsGreen.com/", ResponseNamespace="http://ParsGreen.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetDelivery(string signature, string recId) {
+            object[] results = this.Invoke("GetDelivery", new object[] {
+                        signature,
+                        recId});
+            return ((int)(results[0]));
         }
         
         /// <remarks/>
-        public void SendArrayByLoginInfoAsync(string userName, string password, string[] sender, string[] message, string[] receptor, long unixdate, int[] msgmode, int status, string statusmessage) {
-            this.SendArrayByLoginInfoAsync(userName, password, sender, message, receptor, unixdate, msgmode, status, statusmessage, null);
+        public void GetDeliveryAsync(string signature, string recId) {
+            this.GetDeliveryAsync(signature, recId, null);
         }
         
         /// <remarks/>
-        public void SendArrayByLoginInfoAsync(string userName, string password, string[] sender, string[] message, string[] receptor, long unixdate, int[] msgmode, int status, string statusmessage, object userState) {
-            if ((this.SendArrayByLoginInfoOperationCompleted == null)) {
-                this.SendArrayByLoginInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSendArrayByLoginInfoOperationCompleted);
+        public void GetDeliveryAsync(string signature, string recId, object userState) {
+            if ((this.GetDeliveryOperationCompleted == null)) {
+                this.GetDeliveryOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDeliveryOperationCompleted);
             }
-            this.InvokeAsync("SendArrayByLoginInfo", new object[] {
-                        userName,
-                        password,
-                        sender,
-                        message,
-                        receptor,
-                        unixdate,
-                        msgmode,
-                        status,
-                        statusmessage}, this.SendArrayByLoginInfoOperationCompleted, userState);
+            this.InvokeAsync("GetDelivery", new object[] {
+                        signature,
+                        recId}, this.GetDeliveryOperationCompleted, userState);
         }
         
-        private void OnSendArrayByLoginInfoOperationCompleted(object arg) {
-            if ((this.SendArrayByLoginInfoCompleted != null)) {
+        private void OnGetDeliveryOperationCompleted(object arg) {
+            if ((this.GetDeliveryCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SendArrayByLoginInfoCompleted(this, new SendArrayByLoginInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.GetDeliveryCompleted(this, new GetDeliveryCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/SendArrayByApikey", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public long[] SendArrayByApikey(string apikey, string[] sender, string[] message, string[] receptor, long unixdate, int[] msgmode, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("SendArrayByApikey", new object[] {
-                        apikey,
-                        sender,
-                        message,
-                        receptor,
-                        unixdate,
-                        msgmode,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((long[])(results[0]));
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://ParsGreen.com/GetSMSNumbers", RequestNamespace="http://ParsGreen.com/", ResponseNamespace="http://ParsGreen.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetSMSNumbers(string signature, int numberType, ref string[] numbers) {
+            object[] results = this.Invoke("GetSMSNumbers", new object[] {
+                        signature,
+                        numberType,
+                        numbers});
+            numbers = ((string[])(results[1]));
+            return ((int)(results[0]));
         }
         
         /// <remarks/>
-        public void SendArrayByApikeyAsync(string apikey, string[] sender, string[] message, string[] receptor, long unixdate, int[] msgmode, int status, string statusmessage) {
-            this.SendArrayByApikeyAsync(apikey, sender, message, receptor, unixdate, msgmode, status, statusmessage, null);
+        public void GetSMSNumbersAsync(string signature, int numberType, string[] numbers) {
+            this.GetSMSNumbersAsync(signature, numberType, numbers, null);
         }
         
         /// <remarks/>
-        public void SendArrayByApikeyAsync(string apikey, string[] sender, string[] message, string[] receptor, long unixdate, int[] msgmode, int status, string statusmessage, object userState) {
-            if ((this.SendArrayByApikeyOperationCompleted == null)) {
-                this.SendArrayByApikeyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSendArrayByApikeyOperationCompleted);
+        public void GetSMSNumbersAsync(string signature, int numberType, string[] numbers, object userState) {
+            if ((this.GetSMSNumbersOperationCompleted == null)) {
+                this.GetSMSNumbersOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetSMSNumbersOperationCompleted);
             }
-            this.InvokeAsync("SendArrayByApikey", new object[] {
-                        apikey,
-                        sender,
-                        message,
-                        receptor,
-                        unixdate,
-                        msgmode,
-                        status,
-                        statusmessage}, this.SendArrayByApikeyOperationCompleted, userState);
+            this.InvokeAsync("GetSMSNumbers", new object[] {
+                        signature,
+                        numberType,
+                        numbers}, this.GetSMSNumbersOperationCompleted, userState);
         }
         
-        private void OnSendArrayByApikeyOperationCompleted(object arg) {
-            if ((this.SendArrayByApikeyCompleted != null)) {
+        private void OnGetSMSNumbersOperationCompleted(object arg) {
+            if ((this.GetSMSNumbersCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SendArrayByApikeyCompleted(this, new SendArrayByApikeyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/SendPostalCodeByApikey", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public long[] SendPostalCodeByApikey(string apikey, string sender, string message, long unixdate, int msgmode, long postalcode, long startindex, long count, bool random, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("SendPostalCodeByApikey", new object[] {
-                        apikey,
-                        sender,
-                        message,
-                        unixdate,
-                        msgmode,
-                        postalcode,
-                        startindex,
-                        count,
-                        random,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((long[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void SendPostalCodeByApikeyAsync(string apikey, string sender, string message, long unixdate, int msgmode, long postalcode, long startindex, long count, bool random, int status, string statusmessage) {
-            this.SendPostalCodeByApikeyAsync(apikey, sender, message, unixdate, msgmode, postalcode, startindex, count, random, status, statusmessage, null);
-        }
-        
-        /// <remarks/>
-        public void SendPostalCodeByApikeyAsync(string apikey, string sender, string message, long unixdate, int msgmode, long postalcode, long startindex, long count, bool random, int status, string statusmessage, object userState) {
-            if ((this.SendPostalCodeByApikeyOperationCompleted == null)) {
-                this.SendPostalCodeByApikeyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSendPostalCodeByApikeyOperationCompleted);
-            }
-            this.InvokeAsync("SendPostalCodeByApikey", new object[] {
-                        apikey,
-                        sender,
-                        message,
-                        unixdate,
-                        msgmode,
-                        postalcode,
-                        startindex,
-                        count,
-                        random,
-                        status,
-                        statusmessage}, this.SendPostalCodeByApikeyOperationCompleted, userState);
-        }
-        
-        private void OnSendPostalCodeByApikeyOperationCompleted(object arg) {
-            if ((this.SendPostalCodeByApikeyCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SendPostalCodeByApikeyCompleted(this, new SendPostalCodeByApikeyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/CountPostalCode", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public long CountPostalCode(string apikey, long postalcode, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("CountPostalCode", new object[] {
-                        apikey,
-                        postalcode,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((long)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void CountPostalCodeAsync(string apikey, long postalcode, int status, string statusmessage) {
-            this.CountPostalCodeAsync(apikey, postalcode, status, statusmessage, null);
-        }
-        
-        /// <remarks/>
-        public void CountPostalCodeAsync(string apikey, long postalcode, int status, string statusmessage, object userState) {
-            if ((this.CountPostalCodeOperationCompleted == null)) {
-                this.CountPostalCodeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCountPostalCodeOperationCompleted);
-            }
-            this.InvokeAsync("CountPostalCode", new object[] {
-                        apikey,
-                        postalcode,
-                        status,
-                        statusmessage}, this.CountPostalCodeOperationCompleted, userState);
-        }
-        
-        private void OnCountPostalCodeOperationCompleted(object arg) {
-            if ((this.CountPostalCodeCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.CountPostalCodeCompleted(this, new CountPostalCodeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/GetStatusByApikey", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int[] GetStatusByApikey(string apikey, long[] messageid, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("GetStatusByApikey", new object[] {
-                        apikey,
-                        messageid,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((int[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetStatusByApikeyAsync(string apikey, long[] messageid, int status, string statusmessage) {
-            this.GetStatusByApikeyAsync(apikey, messageid, status, statusmessage, null);
-        }
-        
-        /// <remarks/>
-        public void GetStatusByApikeyAsync(string apikey, long[] messageid, int status, string statusmessage, object userState) {
-            if ((this.GetStatusByApikeyOperationCompleted == null)) {
-                this.GetStatusByApikeyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetStatusByApikeyOperationCompleted);
-            }
-            this.InvokeAsync("GetStatusByApikey", new object[] {
-                        apikey,
-                        messageid,
-                        status,
-                        statusmessage}, this.GetStatusByApikeyOperationCompleted, userState);
-        }
-        
-        private void OnGetStatusByApikeyOperationCompleted(object arg) {
-            if ((this.GetStatusByApikeyCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetStatusByApikeyCompleted(this, new GetStatusByApikeyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/GetStatusByLoginInfo", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int[] GetStatusByLoginInfo(string userName, string password, long[] messageid, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("GetStatusByLoginInfo", new object[] {
-                        userName,
-                        password,
-                        messageid,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((int[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetStatusByLoginInfoAsync(string userName, string password, long[] messageid, int status, string statusmessage) {
-            this.GetStatusByLoginInfoAsync(userName, password, messageid, status, statusmessage, null);
-        }
-        
-        /// <remarks/>
-        public void GetStatusByLoginInfoAsync(string userName, string password, long[] messageid, int status, string statusmessage, object userState) {
-            if ((this.GetStatusByLoginInfoOperationCompleted == null)) {
-                this.GetStatusByLoginInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetStatusByLoginInfoOperationCompleted);
-            }
-            this.InvokeAsync("GetStatusByLoginInfo", new object[] {
-                        userName,
-                        password,
-                        messageid,
-                        status,
-                        statusmessage}, this.GetStatusByLoginInfoOperationCompleted, userState);
-        }
-        
-        private void OnGetStatusByLoginInfoOperationCompleted(object arg) {
-            if ((this.GetStatusByLoginInfoCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetStatusByLoginInfoCompleted(this, new GetStatusByLoginInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/SelectByApikey", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ApiSelect[] SelectByApikey(string apikey, long[] messageid, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("SelectByApikey", new object[] {
-                        apikey,
-                        messageid,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((ApiSelect[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void SelectByApikeyAsync(string apikey, long[] messageid, int status, string statusmessage) {
-            this.SelectByApikeyAsync(apikey, messageid, status, statusmessage, null);
-        }
-        
-        /// <remarks/>
-        public void SelectByApikeyAsync(string apikey, long[] messageid, int status, string statusmessage, object userState) {
-            if ((this.SelectByApikeyOperationCompleted == null)) {
-                this.SelectByApikeyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSelectByApikeyOperationCompleted);
-            }
-            this.InvokeAsync("SelectByApikey", new object[] {
-                        apikey,
-                        messageid,
-                        status,
-                        statusmessage}, this.SelectByApikeyOperationCompleted, userState);
-        }
-        
-        private void OnSelectByApikeyOperationCompleted(object arg) {
-            if ((this.SelectByApikeyCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SelectByApikeyCompleted(this, new SelectByApikeyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/SelectByLoginInfo", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ApiSelect[] SelectByLoginInfo(string username, string password, long[] messageid, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("SelectByLoginInfo", new object[] {
-                        username,
-                        password,
-                        messageid,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((ApiSelect[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void SelectByLoginInfoAsync(string username, string password, long[] messageid, int status, string statusmessage) {
-            this.SelectByLoginInfoAsync(username, password, messageid, status, statusmessage, null);
-        }
-        
-        /// <remarks/>
-        public void SelectByLoginInfoAsync(string username, string password, long[] messageid, int status, string statusmessage, object userState) {
-            if ((this.SelectByLoginInfoOperationCompleted == null)) {
-                this.SelectByLoginInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSelectByLoginInfoOperationCompleted);
-            }
-            this.InvokeAsync("SelectByLoginInfo", new object[] {
-                        username,
-                        password,
-                        messageid,
-                        status,
-                        statusmessage}, this.SelectByLoginInfoOperationCompleted, userState);
-        }
-        
-        private void OnSelectByLoginInfoOperationCompleted(object arg) {
-            if ((this.SelectByLoginInfoCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SelectByLoginInfoCompleted(this, new SelectByLoginInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/SelectoutboxByApikey", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ApiSelect[] SelectoutboxByApikey(string apikey, long startUnixdate, long endUnixdate, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("SelectoutboxByApikey", new object[] {
-                        apikey,
-                        startUnixdate,
-                        endUnixdate,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((ApiSelect[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void SelectoutboxByApikeyAsync(string apikey, long startUnixdate, long endUnixdate, int status, string statusmessage) {
-            this.SelectoutboxByApikeyAsync(apikey, startUnixdate, endUnixdate, status, statusmessage, null);
-        }
-        
-        /// <remarks/>
-        public void SelectoutboxByApikeyAsync(string apikey, long startUnixdate, long endUnixdate, int status, string statusmessage, object userState) {
-            if ((this.SelectoutboxByApikeyOperationCompleted == null)) {
-                this.SelectoutboxByApikeyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSelectoutboxByApikeyOperationCompleted);
-            }
-            this.InvokeAsync("SelectoutboxByApikey", new object[] {
-                        apikey,
-                        startUnixdate,
-                        endUnixdate,
-                        status,
-                        statusmessage}, this.SelectoutboxByApikeyOperationCompleted, userState);
-        }
-        
-        private void OnSelectoutboxByApikeyOperationCompleted(object arg) {
-            if ((this.SelectoutboxByApikeyCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SelectoutboxByApikeyCompleted(this, new SelectoutboxByApikeyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/SelectoutboxByLoginInfo", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ApiSelect[] SelectoutboxByLoginInfo(string username, string password, long startUnixdate, long endUnixdate, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("SelectoutboxByLoginInfo", new object[] {
-                        username,
-                        password,
-                        startUnixdate,
-                        endUnixdate,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((ApiSelect[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void SelectoutboxByLoginInfoAsync(string username, string password, long startUnixdate, long endUnixdate, int status, string statusmessage) {
-            this.SelectoutboxByLoginInfoAsync(username, password, startUnixdate, endUnixdate, status, statusmessage, null);
-        }
-        
-        /// <remarks/>
-        public void SelectoutboxByLoginInfoAsync(string username, string password, long startUnixdate, long endUnixdate, int status, string statusmessage, object userState) {
-            if ((this.SelectoutboxByLoginInfoOperationCompleted == null)) {
-                this.SelectoutboxByLoginInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSelectoutboxByLoginInfoOperationCompleted);
-            }
-            this.InvokeAsync("SelectoutboxByLoginInfo", new object[] {
-                        username,
-                        password,
-                        startUnixdate,
-                        endUnixdate,
-                        status,
-                        statusmessage}, this.SelectoutboxByLoginInfoOperationCompleted, userState);
-        }
-        
-        private void OnSelectoutboxByLoginInfoOperationCompleted(object arg) {
-            if ((this.SelectoutboxByLoginInfoCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SelectoutboxByLoginInfoCompleted(this, new SelectoutboxByLoginInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/SelectlatestByApikey", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ApiSelect[] SelectlatestByApikey(string apikey, int pagesize, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("SelectlatestByApikey", new object[] {
-                        apikey,
-                        pagesize,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((ApiSelect[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void SelectlatestByApikeyAsync(string apikey, int pagesize, int status, string statusmessage) {
-            this.SelectlatestByApikeyAsync(apikey, pagesize, status, statusmessage, null);
-        }
-        
-        /// <remarks/>
-        public void SelectlatestByApikeyAsync(string apikey, int pagesize, int status, string statusmessage, object userState) {
-            if ((this.SelectlatestByApikeyOperationCompleted == null)) {
-                this.SelectlatestByApikeyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSelectlatestByApikeyOperationCompleted);
-            }
-            this.InvokeAsync("SelectlatestByApikey", new object[] {
-                        apikey,
-                        pagesize,
-                        status,
-                        statusmessage}, this.SelectlatestByApikeyOperationCompleted, userState);
-        }
-        
-        private void OnSelectlatestByApikeyOperationCompleted(object arg) {
-            if ((this.SelectlatestByApikeyCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SelectlatestByApikeyCompleted(this, new SelectlatestByApikeyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/SelectlatestByLoginInfo", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ApiSelect[] SelectlatestByLoginInfo(string username, string password, int pagesize, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("SelectlatestByLoginInfo", new object[] {
-                        username,
-                        password,
-                        pagesize,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((ApiSelect[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void SelectlatestByLoginInfoAsync(string username, string password, int pagesize, int status, string statusmessage) {
-            this.SelectlatestByLoginInfoAsync(username, password, pagesize, status, statusmessage, null);
-        }
-        
-        /// <remarks/>
-        public void SelectlatestByLoginInfoAsync(string username, string password, int pagesize, int status, string statusmessage, object userState) {
-            if ((this.SelectlatestByLoginInfoOperationCompleted == null)) {
-                this.SelectlatestByLoginInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSelectlatestByLoginInfoOperationCompleted);
-            }
-            this.InvokeAsync("SelectlatestByLoginInfo", new object[] {
-                        username,
-                        password,
-                        pagesize,
-                        status,
-                        statusmessage}, this.SelectlatestByLoginInfoOperationCompleted, userState);
-        }
-        
-        private void OnSelectlatestByLoginInfoOperationCompleted(object arg) {
-            if ((this.SelectlatestByLoginInfoCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SelectlatestByLoginInfoCompleted(this, new SelectlatestByLoginInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/CancelByApikey", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int[] CancelByApikey(string apikey, long[] messageid, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("CancelByApikey", new object[] {
-                        apikey,
-                        messageid,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((int[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void CancelByApikeyAsync(string apikey, long[] messageid, int status, string statusmessage) {
-            this.CancelByApikeyAsync(apikey, messageid, status, statusmessage, null);
-        }
-        
-        /// <remarks/>
-        public void CancelByApikeyAsync(string apikey, long[] messageid, int status, string statusmessage, object userState) {
-            if ((this.CancelByApikeyOperationCompleted == null)) {
-                this.CancelByApikeyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCancelByApikeyOperationCompleted);
-            }
-            this.InvokeAsync("CancelByApikey", new object[] {
-                        apikey,
-                        messageid,
-                        status,
-                        statusmessage}, this.CancelByApikeyOperationCompleted, userState);
-        }
-        
-        private void OnCancelByApikeyOperationCompleted(object arg) {
-            if ((this.CancelByApikeyCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.CancelByApikeyCompleted(this, new CancelByApikeyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/CancelByLoginInfo", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int[] CancelByLoginInfo(string userName, string password, long[] messageid, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("CancelByLoginInfo", new object[] {
-                        userName,
-                        password,
-                        messageid,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((int[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void CancelByLoginInfoAsync(string userName, string password, long[] messageid, int status, string statusmessage) {
-            this.CancelByLoginInfoAsync(userName, password, messageid, status, statusmessage, null);
-        }
-        
-        /// <remarks/>
-        public void CancelByLoginInfoAsync(string userName, string password, long[] messageid, int status, string statusmessage, object userState) {
-            if ((this.CancelByLoginInfoOperationCompleted == null)) {
-                this.CancelByLoginInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCancelByLoginInfoOperationCompleted);
-            }
-            this.InvokeAsync("CancelByLoginInfo", new object[] {
-                        userName,
-                        password,
-                        messageid,
-                        status,
-                        statusmessage}, this.CancelByLoginInfoOperationCompleted, userState);
-        }
-        
-        private void OnCancelByLoginInfoOperationCompleted(object arg) {
-            if ((this.CancelByLoginInfoCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.CancelByLoginInfoCompleted(this, new CancelByLoginInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/ReceiveByApikey", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ApiReceive[] ReceiveByApikey(string apikey, string lineNumber, short isread, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("ReceiveByApikey", new object[] {
-                        apikey,
-                        lineNumber,
-                        isread,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((ApiReceive[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void ReceiveByApikeyAsync(string apikey, string lineNumber, short isread, int status, string statusmessage) {
-            this.ReceiveByApikeyAsync(apikey, lineNumber, isread, status, statusmessage, null);
-        }
-        
-        /// <remarks/>
-        public void ReceiveByApikeyAsync(string apikey, string lineNumber, short isread, int status, string statusmessage, object userState) {
-            if ((this.ReceiveByApikeyOperationCompleted == null)) {
-                this.ReceiveByApikeyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnReceiveByApikeyOperationCompleted);
-            }
-            this.InvokeAsync("ReceiveByApikey", new object[] {
-                        apikey,
-                        lineNumber,
-                        isread,
-                        status,
-                        statusmessage}, this.ReceiveByApikeyOperationCompleted, userState);
-        }
-        
-        private void OnReceiveByApikeyOperationCompleted(object arg) {
-            if ((this.ReceiveByApikeyCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.ReceiveByApikeyCompleted(this, new ReceiveByApikeyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/ReceiveByLoginInfo", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ApiReceive[] ReceiveByLoginInfo(string userName, string password, string lineNumber, short isread, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("ReceiveByLoginInfo", new object[] {
-                        userName,
-                        password,
-                        lineNumber,
-                        isread,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((ApiReceive[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void ReceiveByLoginInfoAsync(string userName, string password, string lineNumber, short isread, int status, string statusmessage) {
-            this.ReceiveByLoginInfoAsync(userName, password, lineNumber, isread, status, statusmessage, null);
-        }
-        
-        /// <remarks/>
-        public void ReceiveByLoginInfoAsync(string userName, string password, string lineNumber, short isread, int status, string statusmessage, object userState) {
-            if ((this.ReceiveByLoginInfoOperationCompleted == null)) {
-                this.ReceiveByLoginInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnReceiveByLoginInfoOperationCompleted);
-            }
-            this.InvokeAsync("ReceiveByLoginInfo", new object[] {
-                        userName,
-                        password,
-                        lineNumber,
-                        isread,
-                        status,
-                        statusmessage}, this.ReceiveByLoginInfoOperationCompleted, userState);
-        }
-        
-        private void OnReceiveByLoginInfoOperationCompleted(object arg) {
-            if ((this.ReceiveByLoginInfoCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.ReceiveByLoginInfoCompleted(this, new ReceiveByLoginInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/RemainCreditByApiKey", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public long RemainCreditByApiKey(string apikey, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("RemainCreditByApiKey", new object[] {
-                        apikey,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((long)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void RemainCreditByApiKeyAsync(string apikey, int status, string statusmessage) {
-            this.RemainCreditByApiKeyAsync(apikey, status, statusmessage, null);
-        }
-        
-        /// <remarks/>
-        public void RemainCreditByApiKeyAsync(string apikey, int status, string statusmessage, object userState) {
-            if ((this.RemainCreditByApiKeyOperationCompleted == null)) {
-                this.RemainCreditByApiKeyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRemainCreditByApiKeyOperationCompleted);
-            }
-            this.InvokeAsync("RemainCreditByApiKey", new object[] {
-                        apikey,
-                        status,
-                        statusmessage}, this.RemainCreditByApiKeyOperationCompleted, userState);
-        }
-        
-        private void OnRemainCreditByApiKeyOperationCompleted(object arg) {
-            if ((this.RemainCreditByApiKeyCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.RemainCreditByApiKeyCompleted(this, new RemainCreditByApiKeyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://api.kavenegar.com/RemainCreditByLoginInfo", RequestNamespace="http://api.kavenegar.com/", ResponseNamespace="http://api.kavenegar.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public long RemainCreditByLoginInfo(string userName, string password, ref int status, ref string statusmessage) {
-            object[] results = this.Invoke("RemainCreditByLoginInfo", new object[] {
-                        userName,
-                        password,
-                        status,
-                        statusmessage});
-            status = ((int)(results[1]));
-            statusmessage = ((string)(results[2]));
-            return ((long)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void RemainCreditByLoginInfoAsync(string userName, string password, int status, string statusmessage) {
-            this.RemainCreditByLoginInfoAsync(userName, password, status, statusmessage, null);
-        }
-        
-        /// <remarks/>
-        public void RemainCreditByLoginInfoAsync(string userName, string password, int status, string statusmessage, object userState) {
-            if ((this.RemainCreditByLoginInfoOperationCompleted == null)) {
-                this.RemainCreditByLoginInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRemainCreditByLoginInfoOperationCompleted);
-            }
-            this.InvokeAsync("RemainCreditByLoginInfo", new object[] {
-                        userName,
-                        password,
-                        status,
-                        statusmessage}, this.RemainCreditByLoginInfoOperationCompleted, userState);
-        }
-        
-        private void OnRemainCreditByLoginInfoOperationCompleted(object arg) {
-            if ((this.RemainCreditByLoginInfoCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.RemainCreditByLoginInfoCompleted(this, new RemainCreditByLoginInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.GetSMSNumbersCompleted(this, new GetSMSNumbersCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1235,336 +485,66 @@ namespace SimpleMapDemo.com.kavenegar.api {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://api.kavenegar.com/")]
-    public partial class ApiProvincies {
-        
-        private int provinceidField;
-        
-        private string nameField;
-        
-        private long permanentcellcountField;
-        
-        private long temporarycellcountField;
-        
-        /// <remarks/>
-        public int provinceid {
-            get {
-                return this.provinceidField;
-            }
-            set {
-                this.provinceidField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public long permanentcellcount {
-            get {
-                return this.permanentcellcountField;
-            }
-            set {
-                this.permanentcellcountField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public long temporarycellcount {
-            get {
-                return this.temporarycellcountField;
-            }
-            set {
-                this.temporarycellcountField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://api.kavenegar.com/")]
-    public partial class ApiReceive {
-        
-        private long messageidField;
-        
-        private string messageField;
-        
-        private string senderField;
-        
-        private string receptorField;
-        
-        private long dateField;
-        
-        /// <remarks/>
-        public long messageid {
-            get {
-                return this.messageidField;
-            }
-            set {
-                this.messageidField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string message {
-            get {
-                return this.messageField;
-            }
-            set {
-                this.messageField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string sender {
-            get {
-                return this.senderField;
-            }
-            set {
-                this.senderField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string receptor {
-            get {
-                return this.receptorField;
-            }
-            set {
-                this.receptorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public long date {
-            get {
-                return this.dateField;
-            }
-            set {
-                this.dateField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://api.kavenegar.com/")]
-    public partial class ApiSelect {
-        
-        private long messageidField;
-        
-        private string messageField;
-        
-        private int statusField;
-        
-        private string statustextField;
-        
-        private string senderField;
-        
-        private string receptorField;
-        
-        private long dateField;
-        
-        private int costField;
-        
-        /// <remarks/>
-        public long messageid {
-            get {
-                return this.messageidField;
-            }
-            set {
-                this.messageidField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string message {
-            get {
-                return this.messageField;
-            }
-            set {
-                this.messageField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                return this.statusField;
-            }
-            set {
-                this.statusField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string statustext {
-            get {
-                return this.statustextField;
-            }
-            set {
-                this.statustextField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string sender {
-            get {
-                return this.senderField;
-            }
-            set {
-                this.senderField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string receptor {
-            get {
-                return this.receptorField;
-            }
-            set {
-                this.receptorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public long date {
-            get {
-                return this.dateField;
-            }
-            set {
-                this.dateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int cost {
-            get {
-                return this.costField;
-            }
-            set {
-                this.costField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://api.kavenegar.com/")]
-    public partial class ApiCities {
-        
-        private int cityidField;
-        
-        private string nameField;
-        
-        private long permanentcellcountField;
-        
-        private long temporarycellcountField;
-        
-        /// <remarks/>
-        public int cityid {
-            get {
-                return this.cityidField;
-            }
-            set {
-                this.cityidField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public long permanentcellcount {
-            get {
-                return this.permanentcellcountField;
-            }
-            set {
-                this.permanentcellcountField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public long temporarycellcount {
-            get {
-                return this.temporarycellcountField;
-            }
-            set {
-                this.temporarycellcountField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://api.kavenegar.com/")]
-    public enum BulkRecipientType {
-        
-        /// <remarks/>
-        PermanentCells,
-        
-        /// <remarks/>
-        TemporaryCells,
-        
-        /// <remarks/>
-        AllCells,
-    }
-    
-    /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void SendAdvanceCompletedEventHandler(object sender, SendAdvanceCompletedEventArgs e);
+    public delegate void SendOtpCompletedEventHandler(object sender, SendOtpCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SendAdvanceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class SendOtpCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal SendAdvanceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal SendOtpCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public long Result {
+        public int Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((long)(this.results[0]));
+                return ((int)(this.results[0]));
             }
         }
         
         /// <remarks/>
-        public int status {
+        public string otpCode {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    public delegate void MessageInfoCompletedEventHandler(object sender, MessageInfoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class MessageInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal MessageInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public double Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((double)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public int part {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((int)(this.results[1]));
@@ -1572,41 +552,41 @@ namespace SimpleMapDemo.com.kavenegar.api {
         }
         
         /// <remarks/>
-        public string statusmessage {
+        public bool isUnicode {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
+                return ((bool)(this.results[2]));
             }
         }
     }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void ProvinceInfoCompletedEventHandler(object sender, ProvinceInfoCompletedEventArgs e);
+    public delegate void SendGroupSMSCompletedEventHandler(object sender, SendGroupSMSCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ProvinceInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class SendGroupSMSCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal ProvinceInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal SendGroupSMSCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public ApiProvincies[] Result {
+        public int Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((ApiProvincies[])(this.results[0]));
+                return ((int)(this.results[0]));
             }
         }
         
         /// <remarks/>
-        public int status {
+        public int success {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((int)(this.results[1]));
@@ -1614,41 +594,125 @@ namespace SimpleMapDemo.com.kavenegar.api {
         }
         
         /// <remarks/>
-        public string statusmessage {
+        public string[] retStr {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
+                return ((string[])(this.results[2]));
             }
         }
     }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void CityInfoCompletedEventHandler(object sender, CityInfoCompletedEventArgs e);
+    public delegate void SendCompletedEventHandler(object sender, SendCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CityInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class SendCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal CityInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal SendCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public ApiCities[] Result {
+        public int Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((ApiCities[])(this.results[0]));
+                return ((int)(this.results[0]));
             }
         }
         
         /// <remarks/>
-        public int status {
+        public string retStr {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    public delegate void SendGroupSMSP2PCompletedEventHandler(object sender, SendGroupSMSP2PCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SendGroupSMSP2PCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SendGroupSMSP2PCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public int[] status {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int[])(this.results[1]));
+            }
+        }
+        
+        /// <remarks/>
+        public int[] success {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int[])(this.results[2]));
+            }
+        }
+        
+        /// <remarks/>
+        public string[] retStr {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[3]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    public delegate void SendToGroupCompletedEventHandler(object sender, SendToGroupCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SendToGroupCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SendToGroupCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public int success {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((int)(this.results[1]));
@@ -1656,934 +720,96 @@ namespace SimpleMapDemo.com.kavenegar.api {
         }
         
         /// <remarks/>
-        public string statusmessage {
+        public string[] retStr {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
+                return ((string[])(this.results[2]));
             }
         }
     }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void SendRandomBulkByApiKeyCompletedEventHandler(object sender, SendRandomBulkByApiKeyCompletedEventArgs e);
+    public delegate void SendGroupSmsSimpleCompletedEventHandler(object sender, SendGroupSmsSimpleCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SendRandomBulkByApiKeyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class SendGroupSmsSimpleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal SendRandomBulkByApiKeyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal SendGroupSmsSimpleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public long[] Result {
+        public int Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((long[])(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
+                return ((int)(this.results[0]));
             }
         }
     }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void SendSequentialBulkByApiKeyCompletedEventHandler(object sender, SendSequentialBulkByApiKeyCompletedEventArgs e);
+    public delegate void GetDeliveryCompletedEventHandler(object sender, GetDeliveryCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SendSequentialBulkByApiKeyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class GetDeliveryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal SendSequentialBulkByApiKeyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal GetDeliveryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public long[] Result {
+        public int Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((long[])(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
+                return ((int)(this.results[0]));
             }
         }
     }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void SendSimpleByApikeyCompletedEventHandler(object sender, SendSimpleByApikeyCompletedEventArgs e);
+    public delegate void GetSMSNumbersCompletedEventHandler(object sender, GetSMSNumbersCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SendSimpleByApikeyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class GetSMSNumbersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal SendSimpleByApikeyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal GetSMSNumbersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public long[] Result {
+        public int Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((long[])(this.results[0]));
+                return ((int)(this.results[0]));
             }
         }
         
         /// <remarks/>
-        public int status {
+        public string[] numbers {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void SendSimpleByLoginInfoCompletedEventHandler(object sender, SendSimpleByLoginInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SendSimpleByLoginInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SendSimpleByLoginInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public long[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((long[])(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void SendArrayByLoginInfoCompletedEventHandler(object sender, SendArrayByLoginInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SendArrayByLoginInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SendArrayByLoginInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public long[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((long[])(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void SendArrayByApikeyCompletedEventHandler(object sender, SendArrayByApikeyCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SendArrayByApikeyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SendArrayByApikeyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public long[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((long[])(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void SendPostalCodeByApikeyCompletedEventHandler(object sender, SendPostalCodeByApikeyCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SendPostalCodeByApikeyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SendPostalCodeByApikeyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public long[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((long[])(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void CountPostalCodeCompletedEventHandler(object sender, CountPostalCodeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CountPostalCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CountPostalCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public long Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((long)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void GetStatusByApikeyCompletedEventHandler(object sender, GetStatusByApikeyCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetStatusByApikeyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetStatusByApikeyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int[])(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void GetStatusByLoginInfoCompletedEventHandler(object sender, GetStatusByLoginInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetStatusByLoginInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetStatusByLoginInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int[])(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void SelectByApikeyCompletedEventHandler(object sender, SelectByApikeyCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SelectByApikeyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SelectByApikeyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ApiSelect[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ApiSelect[])(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void SelectByLoginInfoCompletedEventHandler(object sender, SelectByLoginInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SelectByLoginInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SelectByLoginInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ApiSelect[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ApiSelect[])(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void SelectoutboxByApikeyCompletedEventHandler(object sender, SelectoutboxByApikeyCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SelectoutboxByApikeyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SelectoutboxByApikeyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ApiSelect[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ApiSelect[])(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void SelectoutboxByLoginInfoCompletedEventHandler(object sender, SelectoutboxByLoginInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SelectoutboxByLoginInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SelectoutboxByLoginInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ApiSelect[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ApiSelect[])(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void SelectlatestByApikeyCompletedEventHandler(object sender, SelectlatestByApikeyCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SelectlatestByApikeyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SelectlatestByApikeyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ApiSelect[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ApiSelect[])(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void SelectlatestByLoginInfoCompletedEventHandler(object sender, SelectlatestByLoginInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SelectlatestByLoginInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SelectlatestByLoginInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ApiSelect[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ApiSelect[])(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void CancelByApikeyCompletedEventHandler(object sender, CancelByApikeyCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CancelByApikeyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CancelByApikeyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int[])(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void CancelByLoginInfoCompletedEventHandler(object sender, CancelByLoginInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CancelByLoginInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CancelByLoginInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int[])(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void ReceiveByApikeyCompletedEventHandler(object sender, ReceiveByApikeyCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ReceiveByApikeyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ReceiveByApikeyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ApiReceive[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ApiReceive[])(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void ReceiveByLoginInfoCompletedEventHandler(object sender, ReceiveByLoginInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ReceiveByLoginInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ReceiveByLoginInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ApiReceive[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ApiReceive[])(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void RemainCreditByApiKeyCompletedEventHandler(object sender, RemainCreditByApiKeyCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class RemainCreditByApiKeyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal RemainCreditByApiKeyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public long Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((long)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    public delegate void RemainCreditByLoginInfoCompletedEventHandler(object sender, RemainCreditByLoginInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class RemainCreditByLoginInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal RemainCreditByLoginInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public long Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((long)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int status {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-        
-        /// <remarks/>
-        public string statusmessage {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[2]));
+                return ((string[])(this.results[1]));
             }
         }
     }
