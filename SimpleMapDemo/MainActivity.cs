@@ -74,7 +74,7 @@ namespace SimpleMapDemo
             Button SendSms = FindViewById<Button>(Resource.Id.submit);
             if (txtNumber.Text.Length >= 10)
             {
-                if (txtNumber.Text.StartsWith("98")|| txtNumber.Text.StartsWith("09")|| txtNumber.Text.StartsWith("9"))
+                if (txtNumber.Text.StartsWith("98")|| txtNumber.Text.StartsWith("09"))
                 {
                     SendSms.Enabled = true;
                     PhoneNumber = txtNumber.Text; 
