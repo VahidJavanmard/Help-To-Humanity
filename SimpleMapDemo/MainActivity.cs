@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Threading.Tasks;
+using System.Timers;
 using Android.App;
 using Android.Content;
 using Android.Gms.Common;
@@ -22,36 +23,12 @@ namespace SimpleMapDemo
         public static readonly string TAG = "XamarinMapDemo";
         private string PhoneNumber = "";
         private int randomCode = 0;
-
+        private bool once = false;
         private string lastNumber = "";
-        // This is a list of the examples that will be display in the Main Activity.
-        //static readonly List<SampleActivityMetaData> SampleMetaDataList = new List<SampleActivityMetaData>
-        //                                                                  {
-        //                                                                      new SampleActivityMetaData(Resource.String.mapsAppText,
-        //                                                                                                 Resource.String.mapsAppTextDescription,
-        //                                                                                                 null),
-        //                                                                      new SampleActivityMetaData(Resource.String.activity_label_axml,
-        //                                                                                                 Resource.String.activity_description_axml,
-        //                                                                                                 typeof(BasicDemoActivity)),
-        //                                                                      new
-        //                                                                          SampleActivityMetaData(Resource.String.activity_label_mapwithmarkers,
-        //                                                                                                 Resource
-        //                                                                                                     .String
-        //                                                                                                     .activity_description_mapwithmarkers,
-        //                                                                                                 typeof(MapWithMarkersActivity)),
-        //                                                                      new
-        //                                                                          SampleActivityMetaData(Resource.String.activity_label_mapwithoverlays,
-        //                                                                                                 Resource
-        //                                                                                                     .String
-        //                                                                                                     .activity_description_mapwithoverlays,
-        //                                                                                                 typeof(MapWithOverlaysActivity)),
-        //                                                                      new SampleActivityMetaData(Resource.String.activity_label_mylocation,
-        //                                                                                                 Resource
-        //                                                                                                     .String.activity_description_mylocation,
-        //                                                                                                 typeof(MyLocationActivity))
-        //                                                                  };
+        Timer s =new Timer(5000);
 
-        bool isGooglePlayServicesInstalled;
+
+          bool isGooglePlayServicesInstalled;
         //SamplesListAdapter listAdapter;
         ListView listView;
 
@@ -59,6 +36,18 @@ namespace SimpleMapDemo
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MainActivity);
+            Button start = FindViewById<Button>(Resource.Id.btnStart);
+            start.Click += Start_Click;
+
+
+        }
+
+       
+
+        private void Start_Click(object sender, EventArgs e)
+        {
+            
+            SetContentView(Resource.Layout.Register);
             //isGooglePlayServicesInstalled = TestIfGooglePlayServicesIsInstalled();
 
             EditText txtNumber = FindViewById<EditText>(Resource.Id.InputNumber);

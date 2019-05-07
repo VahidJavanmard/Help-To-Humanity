@@ -1,65 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+	
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/imageone"
+	android:background="@drawable/startimage"
 	>
-    <TextView
-        android:text="بازیافت"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView1" 
-        android:textSize="50dp"
-        android:fontFamily="@drawable/FontApp"
-    
-    />
 
-    
 
-<!--	<ImageView
-		android:layout_marginBottom="390dp"
-		android:layout_width="wrap_content"
+	<Button
+		android:gravity="center"
+		android:layout_width="100dp"
 		android:layout_height="wrap_content"
-		android:src="@drawable/generatedtext"
-		android:id="@+id/imageView1"
-    />-->
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_marginTop="1350px"
+		android:layout_centerHorizontal="true"
+		android:text="ورود"
+		android:id="@+id/btnStart"
+		android:background="@drawable/button"
+	/>
+	
+	
 
 
-
-  
-
-    <EditText
-        android:hint = "@string/hintEditText"
-        android:inputType="number"
-        android:layout_centerInParent="true"
-        android:gravity="center_vertical"
-        android:paddingLeft="100dp"
-        android:paddingRight="100dp"
-        android:background="@color/EditTextLoginPage"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp"
-        android:id="@+id/InputNumber"
-        android:textStyle="italic" />
-
-    <Button
-        android:text="@string/getConfirmationCode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/submit"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/InputNumber"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:textSize="19dp"
-        android:padding="4dp"
-        android:background="@drawable/button"
-        android:textColor="@color/button"
-        android:textStyle="italic" 
-    />
 
 
 </RelativeLayout>
