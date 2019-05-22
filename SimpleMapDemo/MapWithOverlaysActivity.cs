@@ -33,6 +33,7 @@ namespace SimpleMapDemo
         private List<string> List;
         private ManageDrawer manageDrawer;
         private DrawerLayout MyDrawer;
+
         //private readonly int Code = 0;
 
         public void OnMapReady(GoogleMap map)
@@ -70,6 +71,7 @@ namespace SimpleMapDemo
                 "پیام ها",
                 "پشتیبانی",
                 "تنظیمات",
+                "تماس با ما",
                 "درباره ما",
                 "خروج",
 
@@ -89,6 +91,20 @@ namespace SimpleMapDemo
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetDisplayShowTitleEnabled(true);
             manageDrawer.SyncState();
+            MyDrawer.DrawerClosed += MyDrawer_DrawerClosed;
+            MyDrawer.DrawerOpened += MyDrawer_DrawerOpened;
+
+        }
+
+        private void MyDrawer_DrawerOpened(object sender, DrawerLayout.DrawerOpenedEventArgs e)
+        {
+            mapFragment.View.Visibility = ViewStates.Invisible;
+
+        }
+
+        private void MyDrawer_DrawerClosed(object sender, DrawerLayout.DrawerClosedEventArgs e)
+        {
+            mapFragment.View.Visibility = ViewStates.Visible;
 
 
         }
@@ -151,6 +167,14 @@ namespace SimpleMapDemo
 
 
                         MyDrawer.CloseDrawer(MyListView);
+                        //if(!MyDrawer.IsDrawerOpen(MyListView))
+                        //{ 
+                        //    mapFragment.View.Visibility=ViewStates.Invisible;
+                        //}
+                        //else
+                        //{
+                        //    mapFragment.View.Visibility = ViewStates.Visible;
+                        //}
                         manageDrawer.OnOptionsItemSelected(item);
                         break;
                     }
