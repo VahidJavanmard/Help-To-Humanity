@@ -4,10 +4,10 @@ using Android.Gms.Maps.Model;
 using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
+using Android.Views;
 //using Android.Views;
 using Android.Widget;
 using System.Collections.Generic;
-using Android.Views;
 
 namespace SimpleMapDemo
 {
@@ -34,6 +34,8 @@ namespace SimpleMapDemo
         private ManageDrawer manageDrawer;
         private DrawerLayout MyDrawer;
 
+        private Marker orderMarker = null;
+
         //private readonly int Code = 0;
 
         public void OnMapReady(GoogleMap map)
@@ -47,10 +49,49 @@ namespace SimpleMapDemo
             // Animate the move on the map so that it is showing the markers we added above.
             googleMap.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(InMaui, 17));
 
+            try
+            {
+                googleMap.MapClick += GoogleMap_MapClick;
+            }
+            catch (System.Exception e)
+            {
+                Toast.MakeText(this, e.Message.ToString(), ToastLength.Short).Show();
+            }
+
             // Setup a handler for when the user clicks on a marker.
             //googleMap.MarkerClick += MapOnMarkerClick;
         }
 
+        private void GoogleMap_MapClick(object sender, GoogleMap.MapClickEventArgs e)
+        {
+            if (orderMarker == null)
+            {
+            }
+            else
+            {
+                orderMarker.Remove();
+            }
+            MarkerOptions markerOptions = new MarkerOptions();
+            BitmapDescriptor icon = BitmapDescriptorFactory.FromResource(Resource.Drawable.marker);
+            markerOptions
+                .SetPosition(new LatLng(e.Point.Latitude, e.Point.Longitude))
+                .SetIcon(icon);
+                //.SetSnippet($"مکان سفارش")
+                //.SetTitle($"جا");
+            orderMarker = googleMap.AddMarker(markerOptions);
+            Button order = FindViewById<Button>(Resource.Id.btnOrder);
+            order.Visibility = ViewStates.Visible;
+            order.Click += Order_Click;
+
+        }
+
+        private void Order_Click(object sender, System.EventArgs e)
+        {
+            Toast.MakeText(this,
+                $"مکان {orderMarker.Position.Latitude.ToString()+"و"+orderMarker.Position.Longitude.ToString()}" +
+                $" ثبت شد"
+                , ToastLength.Short).Show();
+        }
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -94,7 +135,13 @@ namespace SimpleMapDemo
             MyDrawer.DrawerClosed += MyDrawer_DrawerClosed;
             MyDrawer.DrawerOpened += MyDrawer_DrawerOpened;
 
+
+
+
+
         }
+
+
 
         private void MyDrawer_DrawerOpened(object sender, DrawerLayout.DrawerOpenedEventArgs e)
         {
@@ -116,42 +163,42 @@ namespace SimpleMapDemo
             switch (e.Position)
             {
                 case 0:
-                {
-                    break;
-                }
+                    {
+                        break;
+                    }
                 case 1:
-                {
-                    break;
-                }
+                    {
+                        break;
+                    }
                 case 2:
-                {
-                    break;
-                }
+                    {
+                        break;
+                    }
                 case 3:
-                {
-                    break;
-                }
+                    {
+                        break;
+                    }
                 case 4:
-                {
-                    break;
-                }
+                    {
+                        break;
+                    }
                 case 5:
-                {
-                    break;
-                }
+                    {
+                        break;
+                    }
                 case 6:
-                {
-                    break;
-                }
+                    {
+                        break;
+                    }
                 case 7:
-                {
-                    break;
-                }
-                
+                    {
+                        break;
+                    }
+
             }
 
 
-            if(e.Position==4)
+            if (e.Position == 4)
             {
                 SetContentView(Resource.Layout.Support);
 

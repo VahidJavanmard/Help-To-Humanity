@@ -42,6 +42,20 @@
         android:layout_height="wrap_content"
 		
 		/>
+		<Button
+			android:layout_width="match_parent"
+			android:layout_height="60dp"
+			android:text="ثبت موقعیت مکانی"
+			android:textColor="@android:color/white"
+			android:textSize="@dimen/abc_text_size_title_material"
+			android:gravity="center"
+			android:visibility="gone"
+			android:layout_marginTop="515dp"
+
+			android:background="@color/OrderButton"
+			android:id="@+id/btnOrder" />
+		
+
 		
 
 		</FrameLayout>

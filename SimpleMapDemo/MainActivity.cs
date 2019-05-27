@@ -129,37 +129,37 @@ namespace SimpleMapDemo
         }
         private bool SendSms(string phoneNumber, int Code)
         {
-            if (lastNumber != phoneNumber)
-            {
-                try
-                {
-                    lastNumber = phoneNumber;
-                    const string ApiKey = "F4FDE848-1FC4-4987-A44C-BA0A38E2E35E";
-                    string messege = "به سامانه جمع آوری بازیافت خوش آمدید" +
-                                     "کد فعالسازی شما :" + PersianNumber(Code.ToString()) + " می باشد.";
-                    com.kavenegar.api.SendSMS sms = new com.kavenegar.api.SendSMS();
-                    string returnSms = "";
-                    int result = sms.Send(ApiKey, phoneNumber, messege, ref returnSms);
-                    if (result != 1)
-                    {
-                        SendSms(phoneNumber, Code);
-                    }
-                    _successfullySend = true;
-                }
-                catch (Exception e)
-                {
-                    Toast.MakeText(this,"دستگاه شما به اینترنت دسترسی ندارد",ToastLength.Short).Show();
-                    return false;
-                }
-            }
-            else
-            {
-                if (!_successfullySend)
-                {
-                    Toast.MakeText(this, "کد برای این شماره دقایقی قبل ارسال شده", ToastLength.Short).Show();
-                return false;
-                }
-            }
+            //if (lastNumber != phoneNumber)
+            //{
+            //    try
+            //    {
+            //        lastNumber = phoneNumber;
+            //        const string ApiKey = "F4FDE848-1FC4-4987-A44C-BA0A38E2E35E";
+            //        string messege = "به سامانه جمع آوری بازیافت خوش آمدید" +
+            //                         "کد فعالسازی شما :" + PersianNumber(Code.ToString()) + " می باشد.";
+            //        com.kavenegar.api.SendSMS sms = new com.kavenegar.api.SendSMS();
+            //        string returnSms = "";
+            //        int result = sms.Send(ApiKey, phoneNumber, messege, ref returnSms);
+            //        if (result != 1)
+            //        {
+            //            SendSms(phoneNumber, Code);
+            //        }
+            //        _successfullySend = true;
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        Toast.MakeText(this,"دستگاه شما به اینترنت دسترسی ندارد",ToastLength.Short).Show();
+            //        return false;
+            //    }
+            //}
+            //else
+            //{
+            //    if (!_successfullySend)
+            //    {
+            //        Toast.MakeText(this, "کد برای این شماره دقایقی قبل ارسال شده", ToastLength.Short).Show();
+            //    return false;
+            //    }
+            //}
             return true;
         }
 

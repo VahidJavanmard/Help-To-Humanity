@@ -4,7 +4,7 @@
   <color name="colorPrimaryDark">#303F9F</color>
   <color name="colorAccent">#FF4081</color>
   <color name="EditTextLoginPage">#ffe3e3e3</color>
-  
+  <color name="OrderButton">#00c853</color>
   <!--<color name="TextViewLoginPage">#000</color>-->
   <!--<color name="BackgroundButtonViewLoginPage">#ff4d7feb</color>-->
   <!--<color name="TextColorButtonViewLoginPage">#ffffffff</color>-->
