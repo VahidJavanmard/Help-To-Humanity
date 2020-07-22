@@ -14,6 +14,7 @@
         android:id="@+id/MyDrawer"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
+			
 			>
 		
         <ListView
@@ -51,7 +52,7 @@
 			android:gravity="center"
 			android:visibility="gone"
 			android:layout_marginTop="515dp"
-
+			android:fontFamily="@drawable/FontApp"
 			android:background="@color/OrderButton"
 			android:id="@+id/btnOrder" />
 		

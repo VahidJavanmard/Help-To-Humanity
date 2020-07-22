@@ -7,10 +7,12 @@ using Android.Support.V7.App;
 using Android.Views;
 //using Android.Views;
 using Android.Widget;
+using Java.Lang;
 using System.Collections.Generic;
 
 namespace SimpleMapDemo
 {
+
     [Activity(Label = "@string/activity_label_mapwithoverlays")]
     public class MapWithOverlaysActivity : AppCompatActivity, IOnMapReadyCallback
     {
@@ -36,26 +38,45 @@ namespace SimpleMapDemo
 
         private Marker orderMarker = null;
 
-        //private readonly int Code = 0;
 
         public void OnMapReady(GoogleMap map)
         {
             googleMap = map;
-            googleMap.MyLocationEnabled = true;
-
-            //AddMonkeyMarkersToMap();
-            //AddInitialPolarBarToMap();
-
-            // Animate the move on the map so that it is showing the markers we added above.
-            googleMap.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(InMaui, 17));
-
             try
             {
-                googleMap.MapClick += GoogleMap_MapClick;
+                try
+                {
+                    googleMap.MyLocationEnabled = true;
+                }
+                catch (System.Exception er)
+                {
+                    Toast.MakeText(this, er.Message.ToString(),ToastLength.Long).Show();
+                }
+
+
+
+                // Move Camera
+                try
+                {
+                    googleMap.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(InMaui, 17));
+                }
+                catch (System.Exception e)
+                {
+
+                }
+
+                try
+                {
+                    googleMap.MapClick += GoogleMap_MapClick;
+                }
+                catch (System.Exception e)
+                {
+                    Toast.MakeText(this, e.Message.ToString(), ToastLength.Short).Show();
+                }
             }
-            catch (System.Exception e)
+            catch
             {
-                Toast.MakeText(this, e.Message.ToString(), ToastLength.Short).Show();
+
             }
 
             // Setup a handler for when the user clicks on a marker.
@@ -76,8 +97,8 @@ namespace SimpleMapDemo
             markerOptions
                 .SetPosition(new LatLng(e.Point.Latitude, e.Point.Longitude))
                 .SetIcon(icon);
-                //.SetSnippet($"مکان سفارش")
-                //.SetTitle($"جا");
+            //.SetSnippet($"مکان سفارش")
+            //.SetTitle($"جا");
             orderMarker = googleMap.AddMarker(markerOptions);
             Button order = FindViewById<Button>(Resource.Id.btnOrder);
             order.Visibility = ViewStates.Visible;
@@ -87,10 +108,33 @@ namespace SimpleMapDemo
 
         private void Order_Click(object sender, System.EventArgs e)
         {
-            Toast.MakeText(this,
-                $"مکان {orderMarker.Position.Latitude.ToString()+"و"+orderMarker.Position.Longitude.ToString()}" +
-                $" ثبت شد"
-                , ToastLength.Short).Show();
+            //Toast.MakeText(this,
+            //    $"مکان {orderMarker.Position.Latitude.ToString() + "و" + orderMarker.Position.Longitude.ToString()}" +
+            //    $" ثبت شد"
+            //    , ToastLength.Short).Show();
+
+
+            try
+            {
+                if (MainActivity.order._locationX(orderMarker.Position.Longitude.ToString()) &&
+                      MainActivity.order._locationY(orderMarker.Position.Latitude.ToString()))
+                {
+                    StartActivity(typeof(SubmitOrder));
+
+                }
+                else
+                {
+                    StartActivity(typeof(MapWithOverlaysActivity));
+                }
+            }
+            catch (System.Exception er)
+            {
+
+                StartActivity(typeof(MapWithOverlaysActivity));
+            }
+
+
+
         }
 
         protected override void OnCreate(Bundle bundle)
@@ -98,6 +142,40 @@ namespace SimpleMapDemo
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.MapWithOverlayLayout);
+
+
+
+            #region CheckForServices
+            try
+            {
+                RWS.WebService1 web = new RWS.WebService1();
+                var phoneNumber = MainActivity.person._phone();
+                var hasService = web.CheckRecycling(phoneNumber);
+                if (hasService)
+                {
+                    StartActivity(typeof(WaitForAccepts));
+                    // Has Service
+
+                }
+                else
+                {
+                    // Not Have Service
+
+                }
+            }
+            catch 
+            {
+
+                StartActivity(typeof(MapWithOverlaysActivity));
+            }
+            #endregion
+
+
+
+
+
+
+
 
             mapFragment = (MapFragment)FragmentManager.FindFragmentById(Resource.Id.map);
             mapFragment.GetMapAsync(this);
@@ -124,8 +202,6 @@ namespace SimpleMapDemo
             MyListView.Tag = 0;
             manageDrawer = new ManageDrawer(this, MyDrawer, Resource.String.openDrawer, Resource.String.closeDrawe);
 
-            //Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.MyToolBar);
-            //SetSupportActionBar(toolbar);
 
             MyDrawer.SetDrawerListener(manageDrawer);
             SupportActionBar.SetHomeButtonEnabled(true);
@@ -162,47 +238,77 @@ namespace SimpleMapDemo
 
             switch (e.Position)
             {
+
+
                 case 0:
                     {
+                        /// اطلاعات کاربری
+                        StartActivity(typeof(UserProfile));
+
                         break;
                     }
                 case 1:
                     {
+                        /// تاریخچه
+                        StartActivity(typeof(History));
+
                         break;
                     }
                 case 2:
                     {
+                        ///  آدرس های منتخب
+                        //StartActivity(typeof(SubmitOrder));
+
                         break;
                     }
                 case 3:
                     {
+                        /// پیام ها
+                        //StartActivity(typeof(SubmitOrder));
+
                         break;
                     }
                 case 4:
                     {
+                        ///  پشتیبانی
+                        StartActivity(typeof(Support));
+
                         break;
                     }
                 case 5:
                     {
+                        ///   تنظیمات
+                        //StartActivity(typeof(SubmitOrder));
+
                         break;
                     }
                 case 6:
                     {
+                        ///   تماس با ما
+                        //StartActivity(typeof(SubmitOrder));
+
                         break;
                     }
                 case 7:
                     {
+                        ///    درباره ما
+                        //StartActivity(typeof(SubmitOrder));
+
+                        break;
+                    }
+                case 8:
+                    {
+                        ///   خروج
+
+                        StartActivity(typeof(MainActivity));
+                        //JavaSystem.Exit(0);
                         break;
                     }
 
             }
 
 
-            if (e.Position == 4)
-            {
-                SetContentView(Resource.Layout.Support);
 
-            }
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
@@ -233,10 +339,17 @@ namespace SimpleMapDemo
         {
             // Pause the GPS - we won't have to worry about showing the 
             // location.
-            googleMap.MyLocationEnabled = true;
+            try
+            {
+                googleMap.MyLocationEnabled = true;
 
-            googleMap.MarkerClick -= MapOnMarkerClick;
-            googleMap.InfoWindowClick -= HandleInfoWindowClick;
+                googleMap.MarkerClick -= MapOnMarkerClick;
+                googleMap.InfoWindowClick -= HandleInfoWindowClick;
+            }
+            catch (System.Exception)
+            {
+
+            }
 
             base.OnPause();
         }
@@ -258,19 +371,19 @@ namespace SimpleMapDemo
         /// <summary>
         ///     Add three markers to the map.
         /// </summary>
-        private void AddMonkeyMarkersToMap()
-        {
-            for (int i = 0; i < LocationForCustomIconMarkers.Length; i++)
-            {
-                BitmapDescriptor icon = BitmapDescriptorFactory.FromResource(Resource.Drawable.monkey);
-                MarkerOptions markerOptions = new MarkerOptions()
-                                    .SetPosition(LocationForCustomIconMarkers[i])
-                                    .SetIcon(icon)
-                                    .SetSnippet($"This is marker #{i}.")
-                                    .SetTitle($"Marker {i}");
-                googleMap.AddMarker(markerOptions);
-            }
-        }
+        //private void AddMonkeyMarkersToMap()
+        //{
+        //    for (int i = 0; i < LocationForCustomIconMarkers.Length; i++)
+        //    {
+        //        BitmapDescriptor icon = BitmapDescriptorFactory.FromResource(Resource.Drawable.monkey);
+        //        MarkerOptions markerOptions = new MarkerOptions()
+        //                            .SetPosition(LocationForCustomIconMarkers[i])
+        //                            .SetIcon(icon)
+        //                            .SetSnippet($"This is marker #{i}.")
+        //                            .SetTitle($"Marker {i}");
+        //        googleMap.AddMarker(markerOptions);
+        //    }
+        //}
 
         private void HandleInfoWindowClick(object sender, GoogleMap.InfoWindowClickEventArgs e)
         {

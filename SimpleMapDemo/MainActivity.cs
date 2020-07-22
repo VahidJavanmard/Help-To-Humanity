@@ -15,12 +15,14 @@ namespace SimpleMapDemo
     {
         public static readonly int RC_INSTALL_GOOGLE_PLAY_SERVICES = 1000;
         public static readonly string TAG = "XamarinMapDemo";
-        private string PhoneNumber = "";
+        public static string PhoneNumber = "";
         private int randomCode = 0;
         private readonly bool once = false;
         private string lastNumber = "";
         private bool isGooglePlayServicesInstalled;
         private bool _successfullySend = false;
+        public static Recycling order =new Recycling();
+        public static Member person =new Member();
 
         //SamplesListAdapter listAdapter;
         private readonly ListView listView;
@@ -36,11 +38,7 @@ namespace SimpleMapDemo
             }
             catch (Exception er)
             {
-                Toast.MakeText(this, er.Message, ToastLength.Long).Show();
-
-            }
-            finally
-            {
+                
 
             }
         }
@@ -49,6 +47,7 @@ namespace SimpleMapDemo
 
         private void Start_Click(object sender, EventArgs e)
         {
+            /// When We CLick Start Button
 
             try
             {
@@ -71,6 +70,8 @@ namespace SimpleMapDemo
 
         private void TxtNumber_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
         {
+            /// When Edit Text Value Changed
+
             EditText txtNumber = FindViewById<EditText>(Resource.Id.InputNumber);
             Button SendSms = FindViewById<Button>(Resource.Id.submit);
             if (txtNumber.Text.Length >= 10)
@@ -95,6 +96,7 @@ namespace SimpleMapDemo
 
         private void SendSms_Click(object sender, EventArgs e)
         {
+            ///  Event When We Click Send Sms Button 
 
             try
             {
@@ -129,6 +131,10 @@ namespace SimpleMapDemo
         }
         private bool SendSms(string phoneNumber, int Code)
         {
+            /// Send Sms Method
+            /// Here We Send Verify Code To Number
+            ///  Also We Check For Internet
+
             //if (lastNumber != phoneNumber)
             //{
             //    try
@@ -136,7 +142,7 @@ namespace SimpleMapDemo
             //        lastNumber = phoneNumber;
             //        const string ApiKey = "F4FDE848-1FC4-4987-A44C-BA0A38E2E35E";
             //        string messege = "به سامانه جمع آوری بازیافت خوش آمدید" +
-            //                         "کد فعالسازی شما :" + PersianNumber(Code.ToString()) + " می باشد.";
+            //                         "کد فعالسازی شما :" +Code.ToString() + " می باشد.";
             //        com.kavenegar.api.SendSMS sms = new com.kavenegar.api.SendSMS();
             //        string returnSms = "";
             //        int result = sms.Send(ApiKey, phoneNumber, messege, ref returnSms);
@@ -148,7 +154,7 @@ namespace SimpleMapDemo
             //    }
             //    catch (Exception e)
             //    {
-            //        Toast.MakeText(this,"دستگاه شما به اینترنت دسترسی ندارد",ToastLength.Short).Show();
+            //        Toast.MakeText(this, "دستگاه شما به اینترنت دسترسی ندارد", ToastLength.Short).Show();
             //        return false;
             //    }
             //}
@@ -157,7 +163,7 @@ namespace SimpleMapDemo
             //    if (!_successfullySend)
             //    {
             //        Toast.MakeText(this, "کد برای این شماره دقایقی قبل ارسال شده", ToastLength.Short).Show();
-            //    return false;
+            //        return false;
             //    }
             //}
             return true;
@@ -165,6 +171,7 @@ namespace SimpleMapDemo
 
         public string PersianNumber(string number)
         {
+            ///  Convert English Number To Persian Number
             string persianNumber = number.Replace("0", "۰").Replace("1", "١").Replace("2", "۲").Replace("3", "۳")
                 .Replace("4", "۴").Replace("5", "۵").Replace("6", "۶").Replace("7", "۷")
                 .Replace("8", "۸").Replace("9", "۹");
@@ -173,6 +180,7 @@ namespace SimpleMapDemo
 
         private void CheckVerifyCode(object sender, Android.Text.TextChangedEventArgs e)
         {
+            /// Here We Check The Code Of User Entered  And Verify Code  
             try
             {
                 EditText registerCode = FindViewById<EditText>(Resource.Id.InputNumber);
@@ -183,9 +191,8 @@ namespace SimpleMapDemo
                     if (int.Parse(registerCode.Text) == randomCode || int.Parse(registerCode.Text) == 12345)
                     {
                         btnLocationtActivity.Enabled = true;
-                        ///WebService Area For Check Old Members
-                        ///Or Insert Data Of New Members
                         btnLocationtActivity.Click += ChangeActivity;
+
                     }
                     else
                     {
@@ -203,59 +210,122 @@ namespace SimpleMapDemo
 
             }
         }
+
+        //private void ChangeActivity()
+        //{
+        //    /// Here We Switch To Map Activity Class
+        //    try
+        //    {
+        //        StartActivity(typeof(MapWithOverlaysActivity));
+        //    }
+        //    catch (Exception error)
+        //    {
+        //        Toast.MakeText(this,error.Message,ToastLength.Long).Show();
+        //    }
+        //}
+
         private void ChangeActivity(object sender, EventArgs e)
         {
-            StartActivity(typeof(MapWithOverlaysActivity));
-        }
-
-        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
-        {
+            /// Here We Switch To Map Activity Class
             try
             {
-                if (RC_INSTALL_GOOGLE_PLAY_SERVICES == requestCode && resultCode == Result.Ok)
+                if (order._phoneNumber(PhoneNumber))
                 {
-                    isGooglePlayServicesInstalled = true;
+                    try
+                    {
+                        ///WebService Area For Check Old Members
+                        ///Or Insert Data Of New Members
+
+                        //person._phone(PhoneNumber);
+                        //if (person.CheckMember(person._phone()))
+                        //{
+                        //    Toast.MakeText(this, "ورود مجدد شما به بازیافت را خیر مقدم میگوییم",
+                        //        ToastLength.Long).Show();
+                        //}
+                        //else
+                        //{
+                        //    person.AddMemberShort(person);
+                        //    Toast.MakeText(this, "شما با موفقیت ثبت نام شدید", ToastLength.Long).Show();
+
+                        //}
+
+                        //person.UpdateLoginDateTime(MainActivity.PhoneNumber);
+                        StartActivity(typeof(MapWithOverlaysActivity));
+
+
+                    }
+                    catch (Exception er)
+                    {
+                        Toast.MakeText(this, "عدم ارتباط با پایگاه داده", ToastLength.Long).Show();
+                    }
+
                 }
                 else
                 {
-                    Log.Warn(TAG, $"Don't know how to handle resultCode {resultCode} for request {requestCode}.");
-                }
-            }
-            catch (Exception e)
-            {
+                    Toast.MakeText(this, "شماره وارد شده قابل قبول نیست", ToastLength.Short).Show();
 
+                }
+
+
+
+
+            }
+            catch (Exception error)
+            {
+                Toast.MakeText(this, error.Message, ToastLength.Long).Show();
             }
         }
 
-        private bool TestIfGooglePlayServicesIsInstalled()
-        {
-            try
-            {
-                int queryResult = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);
-                if (queryResult == ConnectionResult.Success)
-                {
-                    Log.Info(TAG, "Google Play Services is installed on this device.");
-                    return true;
-                }
+        //protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        //{
+        //    /// Here We Check For Google Map Service Of Android Device
+        //    /// We Only Show Map To Users That Have Google Map Service
+        //    try
+        //    {
+        //        if (RC_INSTALL_GOOGLE_PLAY_SERVICES == requestCode && resultCode == Result.Ok)
+        //        {
+        //            isGooglePlayServicesInstalled = true;
+        //        }
+        //        else
+        //        {
+        //            Log.Warn(TAG, $"Don't know how to handle resultCode {resultCode} for request {requestCode}.");
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
 
-                if (GoogleApiAvailability.Instance.IsUserResolvableError(queryResult))
-                {
-                    string errorString = GoogleApiAvailability.Instance.GetErrorString(queryResult);
-                    Log.Error(TAG, "There is a problem with Google Play Services on this device: {0} - {1}", queryResult, errorString);
-                    Dialog errorDialog = GoogleApiAvailability.Instance.GetErrorDialog(this, queryResult, RC_INSTALL_GOOGLE_PLAY_SERVICES);
-                    ErrorDialogFragment dialogFrag = new ErrorDialogFragment(errorDialog);
+        //    }
+        //}
 
-                    dialogFrag.Show(FragmentManager, "GooglePlayServicesDialog");
-                }
+        //private bool TestIfGooglePlayServicesIsInstalled()
+        //{
+        //    try
+        //    {
+        //        int queryResult = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);
+        //        if (queryResult == ConnectionResult.Success)
+        //        {
+        //            Log.Info(TAG, "Google Play Services is installed on this device.");
+        //            return true;
+        //        }
 
-                return false;
-            }
-            catch (Exception e)
-            {
-                Toast.MakeText(this, e.Message, ToastLength.Long).Show();
-                return false;
+        //        if (GoogleApiAvailability.Instance.IsUserResolvableError(queryResult))
+        //        {
+        //            string errorString = GoogleApiAvailability.Instance.GetErrorString(queryResult);
+        //            Log.Error(TAG, "There is a problem with Google Play Services on this device: {0} - {1}", queryResult, errorString);
+        //            Dialog errorDialog = GoogleApiAvailability.Instance.GetErrorDialog(this, queryResult, RC_INSTALL_GOOGLE_PLAY_SERVICES);
+        //            ErrorDialogFragment dialogFrag = new ErrorDialogFragment(errorDialog);
 
-            }
-        }
+        //            dialogFrag.Show(FragmentManager, "GooglePlayServicesDialog");
+        //        }
+
+        //        return false;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Toast.MakeText(this, e.Message, ToastLength.Long).Show();
+        //        return false;
+
+        //    }
+        //}
     }
 }

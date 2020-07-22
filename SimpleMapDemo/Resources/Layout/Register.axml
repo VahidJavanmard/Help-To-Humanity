@@ -6,19 +6,22 @@
     android:orientation="vertical"
     android:background="@drawable/imageone"
 	>
-    <TextView
-		android:layout_marginTop="100dp"
-        android:text="بازیافت"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView1" 
-        android:textSize="50dp"
-        android:fontFamily="@drawable/FontApp"
-		android:layout_centerHorizontal="true"
     
-    />
+	
+	
+	
 
-    
+    <ImageView
+
+		android:id="@+id/imgregister"
+		android:src="@drawable/mainmenu"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="30dp"
+		android:layout_width="300dp"
+		android:layout_height="200dp"
+		
+
+		/>
 
 
 
@@ -31,14 +34,17 @@
         android:layout_centerInParent="true"
         android:gravity="center_vertical"
         android:paddingLeft="100dp"
-        android:paddingRight="100dp"
-        android:background="@color/EditTextLoginPage"
+        android:paddingRight="60dp"
+        
+		android:background="@drawable/roundededittext"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
         android:id="@+id/InputNumber"
-        android:textStyle="italic" />
+		android:fontFamily="@drawable/FontApp"
+		
+	/>
 
     <Button
         android:text="@string/getConfirmationCode"
@@ -53,7 +59,7 @@
         android:padding="4dp"
         android:background="@drawable/button"
         android:textColor="@color/button"
-        android:textStyle="italic" 
+		android:fontFamily="@drawable/FontApp"
     />
 
 

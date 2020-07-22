@@ -19,6 +19,7 @@
 		android:layout_centerHorizontal="true"
 		android:text="ورود"
 		android:id="@+id/btnStart"
+		android:fontFamily="@drawable/FontApp"
 		android:background="@drawable/button"
 		android:padding="20dp"
 	/>

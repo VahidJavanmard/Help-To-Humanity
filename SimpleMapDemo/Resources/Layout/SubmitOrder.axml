@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:background="#9999CC"
+	>
+
+
+
+	<TextView
+		android:layout_marginTop="20dp"
+		android:text="لطفا نوع بازیافت را انتخاب کنید"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView1" 
+		android:fontFamily="@drawable/FontApp"
+	
+	/>
+
+
+
+
+
+
+		<RadioButton
+		android:layout_marginRight="45dp"
+		android:layout_marginTop="30dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:checked="true"
+			android:text="کاغذ"
+			android:id="@+id/rbType1"
+		 android:allowUndo="true"
+					android:layout_gravity="right"
+		android:fontFamily="@drawable/FontApp"
+
+		
+	
+	/>
+		<RadioButton
+		android:layout_marginRight="45dp"
+		
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="شیشه"
+			android:id="@+id/rbType2" 
+		 android:allowUndo="true"
+			android:layout_gravity="right"
+		android:fontFamily="@drawable/FontApp"
+	
+	/>
+		<RadioButton
+		android:layout_marginRight="45dp"
+		
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="پلاستیک"
+			android:id="@+id/rbType3"
+		 android:allowUndo="true"
+			android:layout_gravity="right"
+		android:fontFamily="@drawable/FontApp"
+		
+	
+	/>
+
+	<RadioButton
+		android:layout_marginRight="45dp"
+		
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="فلزات"
+			android:id="@+id/rbType4" 
+		 android:allowUndo="true"
+			android:layout_gravity="right"
+		android:fontFamily="@drawable/FontApp"
+
+		
+	
+	/>
+	<RadioButton
+		android:layout_marginRight="45dp"
+		
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="قطعات رایانه"
+			android:id="@+id/rbType5" 
+		 android:allowUndo="true"
+			android:layout_gravity="right"
+		android:fontFamily="@drawable/FontApp"
+		
+	
+	/>
+
+
+
+	<EditText
+		android:inputType="number"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:layout_marginTop="50dp"
+		android:hint="مجموع وزن تقریبی به کیلوگرم"
+		 android:paddingLeft="100dp"
+        android:paddingRight="20dp"
+		android:layout_marginLeft="25dp"
+		android:layout_marginRight="25dp"
+		android:fontFamily="@drawable/FontApp"
+       android:background="@drawable/roundededittext"
+		android:id="@+id/edgWeight" />
+
+
+
+
+	<Button
+		android:layout_marginTop="50dp"
+		android:id="@+id/btnSubmitOrder" 
+		android:layout_gravity="center"
+android:text="درخواست ماشین"
+android:textColor="#FFFFFF"
+		android:fontFamily="@drawable/FontApp"
+android:layout_width="145dp"
+android:layout_height="60dp"
+android:background="@drawable/BtnSubmitOrder"
+/>
+
+
+
+	
+
+
+
+
+
+</LinearLayout>

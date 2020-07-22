@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="colorPrimary">#BD8BEA</color>
+  <color name="colorPrimary">#0066FF</color>
   <color name="colorPrimaryDark">#303F9F</color>
   <color name="colorAccent">#FF4081</color>
   <color name="EditTextLoginPage">#ffe3e3e3</color>
